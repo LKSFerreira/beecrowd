@@ -5,7 +5,46 @@
     private static void Main(string[] args)
     {  
        
+        /**
+        1012 - Área
+        https://www.beecrowd.com.br/judge/pt/runs/code/30858287
 
+        String[] valores = Console.ReadLine().Split(' ');
+        
+        double areaTriangulo = (double.Parse(valores[0])*double.Parse(valores[2]))/2;
+        double areaCirculo = 3.14159 * (Math.Pow(double.Parse(valores[2]), 2));
+        double areaTrapesio = ((double.Parse(valores[0])+double.Parse(valores[1]))*double.Parse(valores[2]))/2;
+
+        Console.WriteLine($"TRIANGULO: {areaTriangulo.ToString("F3")}");
+        Console.WriteLine($"CIRCULO: {areaCirculo.ToString("F3")}");
+        Console.WriteLine($"TRAPEZIO: {areaTrapesio.ToString("F3")}");
+        Console.WriteLine($"QUADRADO: {Math.Pow(double.Parse(valores[1]),2).ToString("F3")}");
+        Console.WriteLine($"RETANGULO: {(double.Parse(valores[0])*double.Parse(valores[1])).ToString("F3")}");
+        */
+        
+
+        /**
+        1011 - Esfera
+        https://www.beecrowd.com.br/judge/pt/problems/view/1011
+
+        double volume = (4.0 / 3) * 3.14159 * (Math.Pow(double.Parse(Console.ReadLine()), 3));
+        Console.WriteLine($"VOLUME = {volume.ToString("F3")}");
+        */
+    
+        
+        /**
+        1010 - Cálculo Simples
+        https://www.beecrowd.com.br/judge/pt/problems/view/1010
+
+        String[] arrayPrimaria = Console.ReadLine().Split(' ');
+        String[] arraySecundaria = Console.ReadLine().Split(' ');
+
+        double totalPecaA = int.Parse(arrayPrimaria[1]) * double.Parse(arrayPrimaria[2]);
+        double totalPecaB = int.Parse(arraySecundaria[1]) * double.Parse(arraySecundaria[2]);
+            
+        System.Console.WriteLine($"VALOR A PAGAR: R$ {(totalPecaA + totalPecaB).ToString("F2")}");
+        */
+        
 
         /**
         1009 - Salário com Bônus
