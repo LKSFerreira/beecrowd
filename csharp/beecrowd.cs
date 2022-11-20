@@ -3,8 +3,80 @@
 
 
     private static void Main(string[] args)
-    {  
-       
+    {   
+        
+        /**
+        1017 - Gasto de Combustível
+        https://www.beecrowd.com.br/judge/pt/problems/view/1017
+
+        double tempoViagem = double.Parse(Console.ReadLine());
+        double velocidadeMedia = double.Parse(Console.ReadLine());
+
+        double combustivelGasto = tempoViagem*velocidadeMedia/12;
+
+        Console.WriteLine($"{combustivelGasto:F3}");
+        */
+
+
+        /**
+        1016 - Distância
+        https://www.beecrowd.com.br/judge/pt/problems/view/1016
+
+        int resposta = int.Parse(Console.ReadLine())*2;
+        Console.WriteLine($"{resposta} minutos");
+        */
+
+
+        /**
+        1015 - Distância Entre Dois Pontos
+        https://www.beecrowd.com.br/judge/pt/problems/view/1015
+
+        string[] primeiroArray = Console.ReadLine().Split();
+        string[] segundoArray = Console.ReadLine().Split();
+
+        double x1 = double.Parse(primeiroArray[0]);
+        double y1 = double.Parse(primeiroArray[1]);
+
+        double x2 = double.Parse(segundoArray[0]);
+        double y2 = double.Parse(segundoArray[1]);
+
+        double resultadoDistancia = Math.Sqrt((Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2)));
+
+        Console.WriteLine($"{resultadoDistancia:F4}");
+        */
+
+
+        /**
+        1014 - Consumo
+        https://www.beecrowd.com.br/judge/pt/problems/view/1014
+
+        double kmTotal = double.Parse(Console.ReadLine());
+        double combustivelGasto = double.Parse(Console.ReadLine());
+
+        double consumoCarro = kmTotal/combustivelGasto;
+
+        Console.WriteLine($"{consumoCarro:F3} km/l");
+        */
+
+
+        /**
+        1013 - O Maior
+        https://www.beecrowd.com.br/judge/pt/problems/view/1013
+
+        String[] arrayA = Console.ReadLine().Split(' ');
+
+        int valorA = int.Parse(arrayA[0]);
+        int valorB = int.Parse(arrayA[1]);
+        int valorC = int.Parse(arrayA[2]);
+
+        double maiorValor = (valorA + valorB + Math.Abs(valorA-valorB))/2;
+
+        maiorValor = (maiorValor + valorC + Math.Abs(maiorValor-valorC))/2;
+
+        Console.WriteLine($"{maiorValor} eh o maior");
+        */
+
+
         /**
         1012 - Área
         https://www.beecrowd.com.br/judge/pt/runs/code/30858287
@@ -21,7 +93,7 @@
         Console.WriteLine($"QUADRADO: {Math.Pow(double.Parse(valores[1]),2).ToString("F3")}");
         Console.WriteLine($"RETANGULO: {(double.Parse(valores[0])*double.Parse(valores[1])).ToString("F3")}");
         */
-        
+
 
         /**
         1011 - Esfera
@@ -30,8 +102,8 @@
         double volume = (4.0 / 3) * 3.14159 * (Math.Pow(double.Parse(Console.ReadLine()), 3));
         Console.WriteLine($"VOLUME = {volume.ToString("F3")}");
         */
-    
-        
+
+
         /**
         1010 - Cálculo Simples
         https://www.beecrowd.com.br/judge/pt/problems/view/1010
@@ -44,7 +116,7 @@
             
         System.Console.WriteLine($"VALOR A PAGAR: R$ {(totalPecaA + totalPecaB).ToString("F2")}");
         */
-        
+
 
         /**
         1009 - Salário com Bônus
