@@ -1,9 +1,155 @@
 ﻿internal class Program
 {
-
-
     private static void Main(string[] args)
     {
+        double nota1, nota2, nota3, nota4;
+        int[] pesos = { 2, 3, 4, 1 };
+        string[] valorInserido = Console.ReadLine().Split();
+
+        nota1 = double.Parse(valorInserido[0]);
+        nota2 = double.Parse(valorInserido[1]);
+        nota3 = double.Parse(valorInserido[2]);
+        nota4 = double.Parse(valorInserido[3]);
+
+        double media = (nota1 * pesos[0]) + (nota2 * pesos[1]) + (nota3 * pesos[2]) + (nota4 * pesos[3]);
+
+        media = media / 10;
+
+        System.Console.WriteLine($"Media: {media:F1}");
+
+        if (media >= 5 && media <= 6.9)
+        {
+
+            {
+                double notaExame = double.Parse(Console.ReadLine());
+                System.Console.WriteLine("Aluno em exame.");
+                System.Console.WriteLine($"Nota do exame: {notaExame:F1}");
+                media = (media + notaExame) / 2;
+                if (media >= 5)
+                {
+                    System.Console.WriteLine("Aluno aprovado.");
+                }
+                else
+                {
+                    System.Console.WriteLine("Aluno reprovado.");
+                }
+                System.Console.WriteLine($"Media final: {media:F1}");
+            }
+
+        }
+        else if (media < 5)
+        {
+            System.Console.WriteLine("Aluno reprovado.");
+        }
+        else
+        {
+            System.Console.WriteLine("Aluno aprovado.");
+        }
+
+        /**
+        1038 - Lanche
+        https://www.beecrowd.com.br/judge/pt/problems/view/1038
+
+        //string[] valores = "2 3".Split();
+        string[] valores = Console.ReadLine().Split();
+        double[] lanches = new double[] {4, 4.50, 5, 2, 1.5};
+
+        int codigoLanche = int.Parse(valores[0]);
+        int quantidade = int.Parse(valores[1]);
+        double totalPagar;
+
+        switch (codigoLanche)
+        {
+            case 1:
+                totalPagar = quantidade * lanches[0];
+                System.Console.WriteLine($"Total: R$ {totalPagar:F2}");
+                break;
+            case 2:
+                totalPagar = quantidade * lanches[1];
+                System.Console.WriteLine($"Total: R$ {totalPagar:F2}");
+                break;
+            case 3:
+                totalPagar = quantidade * lanches[2];
+                System.Console.WriteLine($"Total: R$ {totalPagar:F2}");
+                break;
+            case 4:
+                totalPagar = quantidade * lanches[3];
+                System.Console.WriteLine($"Total: R$ {totalPagar:F2}");
+                break;
+            case 5:
+                totalPagar = quantidade * lanches[4];
+                System.Console.WriteLine($"Total: R$ {totalPagar:F2}");
+                break;
+        }
+        */
+
+
+        /**
+        1037 - Intervalo
+        https://www.beecrowd.com.br/judge/pt/problems/view/1037
+
+        //float valorInserido = 25.01f;
+        float valorInserido = float.Parse(Console.ReadLine());
+
+        if (valorInserido >= 0 && valorInserido <= 25)
+        {
+            System.Console.WriteLine("Intervalo [0,25]");
+        }
+        else if (valorInserido > 25 && valorInserido <= 50)
+        {
+            System.Console.WriteLine("Intervalo (25,50]");
+        }
+        else if (valorInserido > 50 && valorInserido <= 75)
+        {
+            System.Console.WriteLine("Intervalo (50, 75]");
+        }
+        else if (valorInserido > 75 && valorInserido <= 100)
+        {
+            System.Console.WriteLine("Intervalo (75,100]");
+        } else {
+            System.Console.WriteLine("Fora de intervalo");
+        }
+        */
+
+
+        /**
+        1036 - Fórmula de Bhaskara
+        https://www.beecrowd.com.br/judge/pt/problems/view/1036
+
+        //string[] valores = "10,0 3,0 5,00".Split();
+        string[] valores = Console.ReadLine().Split();
+
+        double valorA = double.Parse(valores[0]);
+        double valorB = double.Parse(valores[1]);
+        double valorC = double.Parse(valores[2]);
+
+        double valorDelta = (valorB * valorB) - (4 * valorA * valorC);
+        
+        double formulaBhaskaraPositivo, formulaBhaskaraNegativo;
+
+        formulaBhaskaraPositivo = ((-valorB) + (Math.Sqrt(valorDelta))) / (2 * valorA);
+        formulaBhaskaraNegativo = ((-valorB) - (Math.Sqrt(valorDelta))) / (2 * valorA);
+
+        if (valorDelta <= 0)
+        {
+            System.Console.WriteLine("Impossivel calcular");
+        }
+        else if (formulaBhaskaraPositivo.ToString() == "NaN" || formulaBhaskaraNegativo.ToString() == "NaN")
+        {
+            System.Console.WriteLine("Impossivel calcular");
+        }
+        else
+        {
+            System.Console.WriteLine($"R1 = {formulaBhaskaraPositivo:F5}");
+            System.Console.WriteLine($"R2 = {formulaBhaskaraNegativo:F5}");
+        }
+        */
+
+
+        /**
+         1035 - Teste de Seleção 1
+        https://www.beecrowd.com.br/judge/pt/problems/view/1035
+    
         string[] arrayValores = Console.ReadLine().Split();
 
         int valorA = int.Parse(arrayValores[0]);
@@ -18,6 +164,7 @@
         {
             System.Console.WriteLine("Valores nao aceitos");
         }
+        */
 
 
         /**
@@ -428,9 +575,5 @@
         helloWorld();
         }
         */
-
-
-
     }
-
 }
