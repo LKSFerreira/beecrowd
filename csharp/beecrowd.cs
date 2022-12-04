@@ -1,9 +1,905 @@
-﻿internal class Program
+﻿
+internal class Program
 {
+    static string[] valoresTesters = {
+                                   "Dia 5-08 : 12 : 23-Dia 9-06 : 13 : 23",
+                                   "Dia 5-08 : 12 : 23-Dia 5-09 : 13 : 25",
+                                   "Dia 5-08 : 12 : 23-Dia 5-09 : 12 : 24",
+                                   "Dia 5-08 : 12 : 23-Dia 6-09 : 12 : 26",
+                                   "Dia 5-08 : 12 : 23-Dia 5-09 : 12 : 22",
+                                   "Dia 5-08 : 12 : 23-Dia 6-09 : 12 : 22",
+                                   "Dia 5-08 : 12 : 23-Dia 6-09 : 11 : 24",
+                                   "Dia 5-08 : 12 : 23-Dia 5-09 : 11 : 27",
+                                   "Dia 5-08 : 12 : 23-Dia 6-08 : 12 : 25",
+                                   "Dia 5-08 : 12 : 43-Dia 6-08 : 11 : 39",
+                                   "Dia 5-08 : 52 : 37-Dia 6-07 : 59 : 36",
+                                   "Dia 5-08 : 52 : 37-Dia 6-07 : 59 : 37",
+                                   "Dia 5-08 : 52 : 37-Dia 6-07 : 53 : 38",
+                                   "Dia 5-08 : 50 : 37-Dia 6-07 : 49 : 38",
+                                   "Dia 5-08 : 12 : 23-Dia 6-09 : 11 : 20",
+                                   "Dia 5-08 : 12 : 23-Dia 5-09 : 10 : 20",
+                                   "Dia 5-08 : 12 : 43-Dia 6-08 : 52 : 42",
+                                   "Dia 5-08 : 50 : 38-Dia 6-07 : 05 : 37",
+                                   "Dia 5-08 : 50 : 38-Dia 6-07 : 05 : 38",
+                                   "Dia 11-07 : 57 : 09-Dia 15-19 : 00 : 00",
+                                   "Dia 5-08 : 12 : 43-Dia 6-08 : 11 : 48",
+                                   "Dia 1-01 : 12 : 23-Dia 2-01 : 12 : 23",
+                                   "Dia 1-01 : 12 : 23-Dia 2-01 : 12 : 24",
+                                   "Dia 1-01 : 12 : 23-Dia 2-01 : 12 : 22"};
+
+    static string[] valoresEsperado = {
+                                    "3 dia(s)-22 hora(s)-1 minuto(s)-0 segundo(s)",
+                                    "0 dia(s)-1 hora(s)-1 minuto(s)-2 segundo(s)",
+                                    "0 dia(s)-1 hora(s)-0 minuto(s)-1 segundo(s)",
+                                    "1 dia(s)-1 hora(s)-0 minuto(s)-3 segundo(s)",
+                                    "0 dia(s)-0 hora(s)-59 minuto(s)-59 segundo(s)",
+                                    "1 dia(s)-0 hora(s)-59 minuto(s)-59 segundo(s)",
+                                    "1 dia(s)-0 hora(s)-59 minuto(s)-1 segundo(s)",
+                                    "0 dia(s)-0 hora(s)-59 minuto(s)-4 segundo(s)",
+                                    "1 dia(s)-0 hora(s)-0 minuto(s)-2 segundo(s)",
+                                    "0 dia(s)-23 hora(s)-58 minuto(s)-56 segundo(s)",
+                                    "0 dia(s)-23 hora(s)-6 minuto(s)-59 segundo(s)",
+                                    "0 dia(s)-23 hora(s)-7 minuto(s)-0 segundo(s)",
+                                    "0 dia(s)-23 hora(s)-1 minuto(s)-1 segundo(s)",
+                                    "0 dia(s)-22 hora(s)-59 minuto(s)-1 segundo(s)",
+                                    "1 dia(s)-0 hora(s)-58 minuto(s)-57 segundo(s)",
+                                    "0 dia(s)-0 hora(s)-57 minuto(s)-57 segundo(s)",
+                                    "1 dia(s)-0 hora(s)-39 minuto(s)-59 segundo(s)",
+                                    "0 dia(s)-22 hora(s)-14 minuto(s)-59 segundo(s)",
+                                    "0 dia(s)-22 hora(s)-15 minuto(s)-0 segundo(s)",
+                                    "4 dia(s)-11 hora(s)-2 minuto(s)-51 segundo(s)",
+                                    "0 dia(s)-23 hora(s)-59 minuto(s)-5 segundo(s)",
+                                    "1 dia(s)-0 hora(s)-0 minuto(s)-0 segundo(s)",
+                                    "1 dia(s)-0 hora(s)-0 minuto(s)-1 segundo(s)",
+                                    "0 dia(s)-23 hora(s)-59 minuto(s)-59 segundo(s)"};
+    static void mostrarResultadoEsperado(string dia, string hora, string minuto, string segundo)
+    {
+        System.Console.WriteLine(dia);
+        System.Console.WriteLine(hora);
+        System.Console.WriteLine(minuto);
+        System.Console.WriteLine(segundo);
+    }
+
+    static void mostrarResultado(int dia, int hora, int minuto, int segundo)
+    {
+        System.Console.WriteLine($"{dia} dia(s)");
+        System.Console.WriteLine($"{hora} hora(s)");
+        System.Console.WriteLine($"{minuto} minuto(s)");
+        System.Console.WriteLine($"{segundo} segundo(s)");
+    }
+
+
     private static void Main(string[] args)
     {
+
+        for (int i = 0; i < valoresTesters.Length; i++)
+        {
+            string[] testeUnitario = valoresTesters[i].Split('-');
+            string[] valorEsperadoUnitario = valoresEsperado[i].Split('-');
+
+            string diaInicialString = testeUnitario[0];
+            string[] horarioInicio = testeUnitario[1].Replace(" ", "").Replace(":", " ").Split();
+            string diaFinalString = testeUnitario[2];
+            string[] horarioFinal = testeUnitario[3].Replace(" ", "").Replace(":", " ").Split();
+
+            // string diaInicialString = Console.ReadLine();
+            // string[] horarioInicio = Console.ReadLine().Replace(" ", "").Replace(":", " ").Split();
+            // string diaFinalString = Console.ReadLine();
+            // string[] horarioFinal = Console.ReadLine().Replace(" ", "").Replace(":", " ").Split();
+
+            int diaInicial = int.Parse(diaInicialString.Last().ToString());
+            int diaFinal = int.Parse(diaFinalString.Last().ToString());
+
+            int horaInicial = int.Parse(horarioInicio[0]);
+            int minutoInicial = int.Parse(horarioInicio[1]);
+            int segundoInicial = int.Parse(horarioInicio[2]);
+
+            int horaFinal = int.Parse(horarioFinal[0]);
+            int minutoFinal = int.Parse(horarioFinal[1]);
+            int segundoFinal = int.Parse(horarioFinal[2]);
+
+            int duracaoJogoHoras = 0, duracaoJogoMinutos = 0, duracaoJogoSegundos = 0, duracaoJogoDias = 0;
+
+            
+
+
+            System.Console.WriteLine("Teste número: " + i);
+            System.Console.WriteLine("-------");
+            mostrarResultado(duracaoJogoDias, duracaoJogoHoras, duracaoJogoMinutos, duracaoJogoSegundos);
+            System.Console.WriteLine("-------");
+
+            System.Console.WriteLine(valorEsperadoUnitario[0].Equals($"{duracaoJogoDias} dia(s)"));
+            System.Console.WriteLine(valorEsperadoUnitario[1].Equals($"{duracaoJogoHoras} hora(s)"));
+            System.Console.WriteLine(valorEsperadoUnitario[2].Equals($"{duracaoJogoMinutos} minuto(s)"));
+            System.Console.WriteLine(valorEsperadoUnitario[3].Equals($"{duracaoJogoSegundos} segundo(s)"));
+            System.Console.WriteLine("------");
+
+        }
+        //string diaInicialString = Console.ReadLine();
+        //string[] horarioInicio = Console.ReadLine().Replace(" ", "").Replace(":", " ").Split();
+        //string diaFinalString = Console.ReadLine();
+        //string[] horarioFinal = Console.ReadLine().Replace(" ", "").Replace(":", " ").Split();
+
+        /*
+            CODIGO DO BEECROWD
+        */
+
+
+
+
+        /*
+        1060 - Números Positivos
+        https://www.beecrowd.com.br/judge/pt/problems/view/1060
+
+        int valoresPositivos = 0;
+
+        for (int i = 0; i < 6; i++)
+        {
+            double valoresEntrada = double.Parse(Console.ReadLine());
+            if (valoresEntrada > 0)     {
+                valoresPositivos++;
+            }
+        }
+
+        System.Console.WriteLine($"{valoresPositivos} valores positivos");
+        */
+
+        /*
+        1059 - Números Pares
+        https://www.beecrowd.com.br/judge/pt/problems/view/1059
+        for (int i = 2; i <= 100; i += 2)
+        {
+            System.Console.WriteLine(i);
+        }
+        */
+
+
+        /*
+        1052 - Mês
+        https://www.beecrowd.com.br/judge/pt/problems/view/1052
+
+        static void buscarMes (int numeroDoMes){
+            switch (numeroDoMes)
+            {
+                case 1:
+                System.Console.WriteLine("January");
+                break;
+
+                case 2:
+                System.Console.WriteLine("February");
+                break;
+
+                case 3:
+                System.Console.WriteLine("March");
+                break;
+
+                case 4:
+                System.Console.WriteLine("April");
+                break;
+
+                case 5:
+                System.Console.WriteLine("May");
+                break;
+
+                case 6:
+                System.Console.WriteLine("June");
+                break;
+
+                case 7:
+                System.Console.WriteLine("July");
+                break;
+
+                case 8:
+                System.Console.WriteLine("August");
+                break;
+
+                case 9:
+                System.Console.WriteLine("September");
+                break;
+
+                case 10:
+                System.Console.WriteLine("October");
+                break;
+
+                case 11:
+                System.Console.WriteLine("November");
+                break;
+
+                case 12:
+                System.Console.WriteLine("December");
+                break;
+
+            }
+        }
+        private static void Main(string[] args)
+        {   
+            int numeroDoMes = int.Parse(Console.ReadLine());
+
+            buscarMes(numeroDoMes);
+
+            */
+
+        /*
+        1051 - Imposto de Renda
+        https://www.beecrowd.com.br/judge/pt/problems/view/1051
+
+        static void calcularImpostoDeRenda(double salario)
+        {
+            double faixaIsenta = 2000, faixa8Porcento = 3000, faixa18Porcento = 4500;
+
+            if (salario <= 2000)
+            {
+                System.Console.WriteLine("Isento");
+            }
+            else if (salario > 2000 && salario <= 3000)
+            {
+                double valorImposto = imposto8Porcento(salario - faixaIsenta);
+
+                System.Console.WriteLine($"R$ {valorImposto:F2}");
+            }
+            else if (salario > 3000 && salario <= 4500)
+            {
+                double valorImposto = 0;
+                valorImposto = imposto8Porcento(faixa8Porcento - faixaIsenta);
+                valorImposto += imposto18Porcento(salario - faixa8Porcento);
+
+                System.Console.WriteLine($"R$ {valorImposto:F2}");
+            }
+            else
+            {
+                double valorImposto = 0;
+                valorImposto = imposto8Porcento(faixa8Porcento - faixaIsenta);
+                valorImposto += imposto18Porcento(faixa18Porcento - faixa8Porcento);
+                valorImposto += imposto28Porcento(salario - faixa18Porcento);
+
+                System.Console.WriteLine($"R$ {valorImposto:F2}");
+            }
+        }
+
+        static double imposto8Porcento(double salario)
+        {
+            return salario * 0.08;
+        }
+
+        static double imposto18Porcento(double salario)
+        {
+            return salario * 0.18;
+        }
+
+        static double imposto28Porcento(double salario)
+        {
+            return salario * 0.28;
+        }
+
+        private static void Main(string[] args)
+        {
+            double salario = double.Parse(Console.ReadLine());
+            calcularImpostoDeRenda(salario);
+            */
+
+
+
+
+        /*
+        1050 - DDD
+        https://www.beecrowd.com.br/judge/pt/problems/view/1050
+
+        private static void buscarCidadePeloDDD(int ddd){
+            switch (ddd)
+            {
+                case 61:
+                System.Console.WriteLine("Brasilia");
+                break;
+
+                case 71:
+                System.Console.WriteLine("Salvador");
+                break;
+
+                case 11:
+                System.Console.WriteLine("Sao Paulo");
+                break;
+
+                case 21:
+                System.Console.WriteLine("Rio de Janeiro");
+                break;
+
+                case 32:
+                System.Console.WriteLine("Juiz de Fora");
+                break;
+
+                case 19:
+                System.Console.WriteLine("Campinas");
+                break;
+
+                case 27:
+                System.Console.WriteLine("Vitoria");
+                break;
+
+                case 31:
+                System.Console.WriteLine("Belo Horizonte");
+                break;
+
+                default:
+                System.Console.WriteLine("DDD nao cadastrado");
+                break;
+            }
+        }
+
+        private static void Main(string[] args)
+        {   
+            int ddd = int.Parse(Console.ReadLine());
+
+            buscarCidadePeloDDD(ddd);
+        */
+
+
+        /*
+        1049 - Animal
+        https://www.beecrowd.com.br/judge/pt/problems/view/1049
+
+        public static void classificar(string filo, string classe, string genero)
+        {
+            switch (filo)
+            {
+                case "vertebrado":
+                    buscarClasseVertebrado(classe, genero);
+                    break;
+
+                case "invertebrado":
+                    buscarClasseInvertebrado(classe, genero);
+                    break;
+            }
+        }
+
+        public static void buscarClasseVertebrado(string classe, string genero)
+        {
+            switch (classe)
+            {
+                case "ave":
+                    buscarGeneroAve(genero);
+                    break;
+
+                case "mamifero":
+                    buscarGeneroMamifero(genero);
+                    break;
+            }
+        }
+
+        public static void buscarClasseInvertebrado(string classe, string genero)
+        {
+            switch (classe)
+            {
+                case "inseto":
+                    buscarGeneroInseto(genero);
+                    break;
+
+                case "anelideo":
+                    buscarGeneroAnelideo(genero);
+                    break;
+            }
+        }
+
+        public static void buscarGeneroAve(string genero)
+        {
+            switch (genero)
+            {
+                case "carnivoro":
+                    aguia();
+                    break;
+
+                case "onivoro":
+                    pomba();
+                    break;
+            }
+        }
+
+        public static void buscarGeneroMamifero(string genero)
+        {
+            switch (genero)
+            {
+                case "onivoro":
+                    homem();
+                    break;
+
+                case "herbivoro":
+                    vaca();
+                    break;
+            }
+        }
+
+        public static void buscarGeneroInseto(string genero)
+        {
+            switch (genero)
+            {
+                case "hematofago":
+                    pulga();
+                    break;
+
+                case "herbivoro":
+                    lagarta();
+                    break;
+            }
+        }
+
+        public static void buscarGeneroAnelideo(string genero)
+        {
+            switch (genero)
+            {
+                case "hematofago":
+                    sanguessuga();
+                    break;
+
+                case "onivoro":
+                    minhoca();
+                    break;
+            }
+        }
+
+        public static void aguia() { System.Console.WriteLine("aguia"); }
+        public static void pomba() { System.Console.WriteLine("pomba"); }
+        public static void homem() { System.Console.WriteLine("homem"); }
+        public static void vaca() { System.Console.WriteLine("vaca"); }
+        public static void pulga() { System.Console.WriteLine("pulga"); }
+        public static void lagarta() { System.Console.WriteLine("lagarta"); }
+        public static void sanguessuga() { System.Console.WriteLine("sanguessuga"); }
+        public static void minhoca() { System.Console.WriteLine("minhoca"); }
+
+        private static void Main(string[] args)
+        {   
+
+            string filo = Console.ReadLine();
+            string classe = Console.ReadLine();
+            string genero = Console.ReadLine();
+
+            classificar(filo, classe, genero);
+        */
+
+
+
+
+
+        /*
+        1048 - Aumento de Salário
+        https://www.beecrowd.com.br/judge/pt/problems/view/1048
+
+        public static void reajustarSalario(double salario, double percentualReajuste)
+        {
+            percentualReajuste = percentualReajuste / 100;
+            double reajuste = salario * percentualReajuste;
+            salario += reajuste;
+
+            System.Console.WriteLine($"Novo salario: {salario:F2}");
+            System.Console.WriteLine($"Reajuste ganho: {reajuste:F2}");
+
+            percentualReajuste = percentualReajuste * 100;
+            System.Console.WriteLine($"Em percentual: {(int)percentualReajuste} %");
+        }
+        private static void Main(string[] args)
+        {
+            double salario = double.Parse(Console.ReadLine());
+            double percentualReajuste = 0;
+
+            if (salario <= 400)
+            {
+                percentualReajuste = 15;
+                reajustarSalario(salario, percentualReajuste);
+            }
+            else if (salario > 400 && salario <= 800)
+            {
+                percentualReajuste = 12;
+                reajustarSalario(salario, percentualReajuste);
+            }
+            else if (salario > 800 && salario <= 1200)
+            {
+                percentualReajuste = 10;
+                reajustarSalario(salario, percentualReajuste);
+            }
+            else if (salario > 1200 && salario <= 2000)
+            {
+                percentualReajuste = 7;
+                reajustarSalario(salario, percentualReajuste);
+            }
+            else
+            {
+                percentualReajuste = 4;
+                reajustarSalario(salario, percentualReajuste);
+            }
+            */
+
+
+        /*
+        1047 - Tempo de Jogo com Minutos
+        https://www.beecrowd.com.br/judge/pt/problems/view/1047
+
+        public static int calcularMinutos(int minutoInicial, int minutoFinal)
+        {
+            if (minutoInicial > minutoFinal)
+            {
+                return (60 - minutoInicial) + minutoFinal;
+            }
+            else
+            {
+                return minutoFinal - minutoInicial;
+            }
+        }
+
+        private static void Main(string[] args)
+        {
+            string[] valoresTesters = {
+                "7 8 9 10",
+                "7 7 7 7",
+                "7 10 8 9",
+                "10 12 10 11",
+                "1 1 1 1",
+                "1 1 1 0",
+                "1 1 1 2",
+                "10 12 12 12",
+                "1 59 2 59",
+                "11 23 10 22",
+                "11 39 19 15"};
+
+            string[] valoresEsperados = {
+                "O JOGO DUROU 2 HORA(S) E 2 MINUTO(S)",
+                "O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)",
+                "O JOGO DUROU 0 HORA(S) E 59 MINUTO(S)",
+                "O JOGO DUROU 23 HORA(S) E 59 MINUTO(S)",
+                "O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)",
+                "O JOGO DUROU 23 HORA(S) E 59 MINUTO(S)",
+                "O JOGO DUROU 0 HORA(S) E 1 MINUTO(S)",
+                "O JOGO DUROU 2 HORA(S) E 0 MINUTO(S)",
+                "O JOGO DUROU 1 HORA(S) E 0 MINUTO(S)",
+                "O JOGO DUROU 22 HORA(S) E 59 MINUTO(S)",
+                "O JOGO DUROU 7 HORA(S) E 36 MINUTO(S)"};
+
+            for (int i = 0; i < valoresTesters.Length; i++)
+            {
+                string[] valoresInseridos = valoresTesters[i].Split();
+                //string[] valoresInseridos = Console.ReadLine().Split();
+
+                int horaInicial = int.Parse(valoresInseridos[0]);
+                int minutoInicial = int.Parse(valoresInseridos[1]);
+                int horaFinal = int.Parse(valoresInseridos[2]);
+                int minutoFinal = int.Parse(valoresInseridos[3]);
+                int duracaoJogoHoras = 0, duracaoJogosMinutos = 0;
+
+                duracaoJogosMinutos = calcularMinutos(minutoInicial, minutoFinal);
+
+                if (horaInicial > horaFinal)
+                {
+                    duracaoJogoHoras = (24 - horaInicial) + horaFinal;
+                    if (minutoInicial > minutoFinal)
+                    {
+                        duracaoJogoHoras--;
+                    }
+                    System.Console.WriteLine($"O JOGO DUROU {duracaoJogoHoras} HORA(S) E {duracaoJogosMinutos} MINUTO(S)");
+                }
+                else if (horaInicial < horaFinal)
+                {
+                    duracaoJogoHoras = horaFinal - horaInicial;
+                    if (horaInicial < horaFinal && minutoInicial > minutoFinal)
+                    {
+                        duracaoJogoHoras--;
+                    }
+                    System.Console.WriteLine($"O JOGO DUROU {duracaoJogoHoras} HORA(S) E {duracaoJogosMinutos} MINUTO(S)");
+                }
+                else
+                {
+                    duracaoJogoHoras = 24;
+                    if (minutoInicial > minutoFinal)
+                    {
+                        duracaoJogoHoras--;
+                    }
+                    else if (minutoInicial < minutoFinal)
+                    {
+                        duracaoJogoHoras = 0;
+                    }
+                    System.Console.WriteLine($"O JOGO DUROU {duracaoJogoHoras} HORA(S) E {duracaoJogosMinutos} MINUTO(S)");
+                }
+                System.Console.WriteLine(valoresEsperados[i]);
+                System.Console.WriteLine("-----------------");
+            }
+            */
+
+
+        /*
+        1046 - Tempo de Jogo
+        https://www.beecrowd.com.br/judge/pt/problems/view/1046
+
+        string[] valoresInseridos = Console.ReadLine().Split();
+        int horaInicial = int.Parse(valoresInseridos[0]), horaFinal = int.Parse(valoresInseridos[1]), duracaoJogoHoras = 0;
+
+        if (horaInicial > horaFinal)
+        {
+            duracaoJogoHoras = (24 -horaInicial) + horaFinal;
+            System.Console.WriteLine($"O JOGO DUROU {duracaoJogoHoras} HORA(S)");
+        }
+
+        if (horaInicial == horaFinal)
+        {
+            System.Console.WriteLine("O JOGO DUROU 24 HORA(S)");
+        }
+
+        if (horaInicial < horaFinal)
+        {   
+            duracaoJogoHoras = horaFinal-horaInicial;
+            System.Console.WriteLine($"O JOGO DUROU {duracaoJogoHoras} HORA(S)");
+        }
+        */
+
+
+        /*
+        1045 - Tipos de Triângulos
+        https://www.beecrowd.com.br/judge/pt/problems/view/1045
+
+        private static double[] OrdenarValoresDecrescente(string[] valores)
+            {
+                string[] valoresOriginais = valores;
+                double[] valoresOrdenados = new double[3];
+                double valorA, valorB, valorC, aux;
+
+                valorA = double.Parse(valoresOriginais[0]);
+                valorB = double.Parse(valoresOriginais[1]);
+                valorC = double.Parse(valoresOriginais[2]);
+
+                if (valorA > valorB)
+                {
+                    aux = valorB;
+                    valorB = valorA;
+                    valorA = aux;
+                }
+
+                if (valorB > valorC)
+                {
+                    aux = valorC;
+                    valorC = valorB;
+                    valorB = aux;
+                    if (valorA > valorB)
+                    {
+                        aux = valorB;
+                        valorB = valorA;
+                        valorA = aux;
+                    }
+                }
+                valoresOrdenados[0] = valorC;
+                valoresOrdenados[1] = valorB;
+                valoresOrdenados[2] = valorA;
+
+                return valoresOrdenados;
+            }
+
+        private static void Main(string[] args)
+        {
+            string[] valores = Console.ReadLine().Replace(".", ",").Split();
+            double[] valoresTriangulos = OrdenarValoresDecrescente(valores);
+            double valorA, valorB, valorC;
+
+            valorA = valoresTriangulos[0];
+            valorB = valoresTriangulos[1];
+            valorC = valoresTriangulos[2];
+
+
+            if (valorA >= valorB + valorC)
+            {
+                System.Console.WriteLine("NAO FORMA TRIANGULO");
+            }
+            else
+            {
+                if (Math.Pow(valorA, 2) > Math.Pow(valorB, 2) + Math.Pow(valorC, 2))
+                {
+                    System.Console.WriteLine("TRIANGULO OBTUSANGULO");
+                }
+            }
+
+            if ((valorA * valorA) == (valorB * valorB) + (valorC * valorC))
+            {
+                System.Console.WriteLine("TRIANGULO RETANGULO");
+            }
+
+            if ((valorA * valorA) < (valorB * valorB) + (valorC * valorC))
+            {
+                System.Console.WriteLine("TRIANGULO ACUTANGULO");
+            }
+
+            if (valorA == valorB && valorA == valorC)
+            {
+                System.Console.WriteLine("TRIANGULO EQUILATERO");
+            }
+
+            if (((valorA == valorB || valorA == valorC) && (valorB != valorC)) || ((valorB == valorA || valorB == valorC)) && (valorA != valorC))
+            {
+                System.Console.WriteLine("TRIANGULO ISOSCELES");
+            }
+            */
+
+
+        /*
+        1044 - Múltiplos
+        https://www.beecrowd.com.br/judge/pt/problems/view/1044
+
+        string[] valoresInseridos = Console.ReadLine().Split();
+        int valorA = int.Parse(valoresInseridos[0]);
+        int valorB = int.Parse(valoresInseridos[1]);
+
+        if (valorA % valorB == 0 || valorB % valorA == 0)
+        {
+            System.Console.WriteLine("Sao Multiplos");
+        }
+        else
+        {
+            System.Console.WriteLine("Nao sao Multiplos");
+        }
+        */
+
+
+        /*
+        1043 - Triângulo
+        https://www.beecrowd.com.br/judge/pt/problems/view/1043
+
+        private static double[] OrdenarValores(string[] valores)
+        {
+            string[] valoresOriginais = valores;
+            double[] valoresOrdenados = new double[3];
+            double valorA, valorB, valorC, aux;
+
+            valorA = double.Parse(valoresOriginais[0]);
+            valorB = double.Parse(valoresOriginais[1]);
+            valorC = double.Parse(valoresOriginais[2]);
+
+            if (valorA > valorB)
+            {
+                aux = valorB;
+                valorB = valorA;
+                valorA = aux;
+            }
+
+            if (valorB > valorC)
+            {
+                aux = valorC;
+                valorC = valorB;
+                valorB = aux;
+                if (valorA > valorB)
+                {
+                    aux = valorB;
+                    valorB = valorA;
+                    valorA = aux;
+                }
+            }
+            valoresOrdenados[0] = valorA;
+            valoresOrdenados[1] = valorB;
+            valoresOrdenados[2] = valorC;
+
+            return valoresOrdenados;
+        }
+
+        private static void Main(string[] args)
+        {
+            string[] valoresInseridos = Console.ReadLine().Split();
+            double[] valores = new double[3];
+
+            for (int i = 0; i < valores.Length; i++)
+            {
+                valores[i] = OrdenarValores(valoresInseridos)[i];
+            }
+
+            double valorA, valorB, valorC, perimetro, area;
+            valorA = valores[0];
+            valorB = valores[1];
+            valorC = valores[2];
+
+            if (valorA + valorB > valorC)
+            {
+                perimetro = valorA + valorB + valorC;
+                System.Console.WriteLine($"Perimetro = {perimetro:F1}");
+            }
+            else
+            {
+                valorA = double.Parse(valoresInseridos[0]);
+                valorB = double.Parse(valoresInseridos[1]);
+                valorC = double.Parse(valoresInseridos[2]);
+
+                area = ((valorA + valorB) * valorC) / 2;
+                System.Console.WriteLine($"Area = {area:F1}");
+            }
+            */
+
+
+        /*
+        1042 - Sort Simples
+        https://www.beecrowd.com.br/judge/pt/problems/view/1042
+
+        string[] valoresOriginais = Console.ReadLine().Split();
+        int[] valoresOrdenados = new int[3];
+        int valorA, valorB, valorC, aux;
+
+        valorA = int.Parse(valoresOriginais[0]);
+        valorB = int.Parse(valoresOriginais[1]);
+        valorC = int.Parse(valoresOriginais[2]);
+
+        if (valorA > valorB)
+        {
+            aux = valorB;
+            valorB = valorA;
+            valorA = aux;
+        }
+
+        if (valorB > valorC)
+        {
+            aux = valorC;
+            valorC = valorB;
+            valorB = aux;
+
+            if (valorA > valorB)
+            {
+                aux = valorB;
+                valorB = valorA;
+                valorA = aux;
+            }
+
+        }
+
+        valoresOrdenados[0] = valorA;
+        valoresOrdenados[1] = valorB;
+        valoresOrdenados[2] = valorC;
+
+        foreach (var valor in valoresOrdenados)
+        {
+            System.Console.WriteLine(valor);
+        }
+
+        System.Console.WriteLine();
+
+        foreach (var numero in valoresOriginais)
+        {
+            System.Console.WriteLine(numero);
+        }
+        */
+
+
+        /*
+        1041 - Coordenadas de um Ponto
+        https://www.beecrowd.com.br/judge/pt/problems/view/1041
+
+        string[] valoresInserido = Console.ReadLine().Split();
+
+        double valorX = double.Parse(valoresInserido[0]);
+        double valorY = double.Parse(valoresInserido[1]);
+
+        if (valorX == 0 && valorY == 0)
+        {
+            System.Console.WriteLine("Origem");
+        }
+        else if (valorX == 0 && valorY != 0)
+        {
+            System.Console.WriteLine("Eixo Y");
+        }
+        else if (valorX != 0 && valorY == 0)
+        {
+            System.Console.WriteLine("Eixo X");
+        }
+        else if (valorX > 0 && valorY > 0)
+        {
+            System.Console.WriteLine("Q1");
+        }
+        else if (valorX < 0 && valorY > 0)
+        {
+            System.Console.WriteLine("Q2");
+        }
+        else if (valorX < 0 && valorY < 0)
+        {
+            System.Console.WriteLine("Q3");
+        }
+        else
+        {
+            System.Console.WriteLine("Q4");
+        }
+        */
+
+
+        /*        
+        1040 - Média 3
+        https://www.beecrowd.com.br/judge/pt/problems/view/1040
+
         double nota1, nota2, nota3, nota4;
-        int[] pesos = { 2, 3, 4, 1 };
         string[] valorInserido = Console.ReadLine().Split();
 
         nota1 = double.Parse(valorInserido[0]);
@@ -11,31 +907,14 @@
         nota3 = double.Parse(valorInserido[2]);
         nota4 = double.Parse(valorInserido[3]);
 
-        double media = (nota1 * pesos[0]) + (nota2 * pesos[1]) + (nota3 * pesos[2]) + (nota4 * pesos[3]);
-
-        media = media / 10;
+        double media = ((nota1 * 2) + (nota2 * 3) + (nota3 * 4) + (nota4 * 1)) / 10;
+        media = Math.Round(media, 1);
 
         System.Console.WriteLine($"Media: {media:F1}");
 
-        if (media >= 5 && media <= 6.9)
+        if (media >= 7)
         {
-
-            {
-                double notaExame = double.Parse(Console.ReadLine());
-                System.Console.WriteLine("Aluno em exame.");
-                System.Console.WriteLine($"Nota do exame: {notaExame:F1}");
-                media = (media + notaExame) / 2;
-                if (media >= 5)
-                {
-                    System.Console.WriteLine("Aluno aprovado.");
-                }
-                else
-                {
-                    System.Console.WriteLine("Aluno reprovado.");
-                }
-                System.Console.WriteLine($"Media final: {media:F1}");
-            }
-
+            System.Console.WriteLine("Aluno aprovado.");
         }
         else if (media < 5)
         {
@@ -43,8 +922,24 @@
         }
         else
         {
-            System.Console.WriteLine("Aluno aprovado.");
+            System.Console.WriteLine("Aluno em exame.");
+            double notaExame = double.Parse(Console.ReadLine());
+            notaExame = Math.Round(notaExame, 1);
+            System.Console.WriteLine($"Nota do exame: {notaExame:F1}");
+            media = (media + notaExame) / 2;
+            media = Math.Round(notaExame, 1);
+            if (media >= 5)
+            {
+                System.Console.WriteLine("Aluno aprovado.");
+            }
+            else
+            {
+                System.Console.WriteLine("Aluno reprovado.");
+            }
+            System.Console.WriteLine($"Media final: {media:F1}");
         }
+        */
+
 
         /**
         1038 - Lanche
@@ -149,7 +1044,7 @@
         /**
          1035 - Teste de Seleção 1
         https://www.beecrowd.com.br/judge/pt/problems/view/1035
-    
+
         string[] arrayValores = Console.ReadLine().Split();
 
         int valorA = int.Parse(arrayValores[0]);
@@ -506,7 +1401,7 @@
 
         double primeiroValor = double.Parse(Console.ReadLine()) * 3.5;
         double segundoValor = double.Parse(Console.ReadLine()) * 7.5;
-    
+
         Console.WriteLine($"MEDIA = {((primeiroValor + segundoValor) / (3.5 + 7.5)).ToString("F5")}");
         */
 
@@ -569,7 +1464,7 @@
         {
         Console.WriteLine("Hello World!");
         }
-    
+
         static void Main(string[] args)
         { 
         helloWorld();
