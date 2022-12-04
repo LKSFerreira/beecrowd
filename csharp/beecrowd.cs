@@ -60,6 +60,74 @@ internal class Program
         System.Console.WriteLine(segundo);
     }
 
+    static int[] calcularTempoEvento(int diaInicial, int diaFinal,
+                                     int horaInicial, int horaFinal,
+                                        int minutoInicial, int minutoFinal,
+                                            int segundoInicial, int segundoFinal)
+    {
+        int segundos = calcularSegundos(segundoInicial, segundoFinal);
+        if (segundoFinal > segundoInicial)
+        {
+            minutoFinal++;
+        }
+
+        int minutos = calcularMinutos(minutoInicial, minutoFinal);
+        if (minutoFinal > minutoInicial)
+        {
+            horaFinal++;
+        }
+
+        int horas = calcularHoras(horaInicial, horaFinal);
+
+        if (horaFinal > horaInicial)
+        {
+            diaFinal++;
+        }
+
+        int dias = Math.Abs(calcularDias(diaInicial, diaFinal));
+
+        int[] arrayEventos = { dias, horas, minutos, segundos };
+
+        return arrayEventos;
+    }
+
+    static int calcularDias(int diaInicial, int diaFinal)
+    {
+        /**
+        Quando essa função for chamada, aplicar o módulo ao final do precesso
+        */
+        return diaInicial - diaFinal;
+    }
+    static int calcularHoras(int horaInicial, int horaFinal)
+    {
+        if (horaFinal >= horaInicial)
+        {
+            return horaFinal - horaInicial;
+        }
+
+        return (24 - horaInicial) + horaFinal;
+    }
+
+    static int calcularMinutos(int minutoInicial, int minutoFinal)
+    {
+        if (minutoFinal >= minutoInicial)
+        {
+            return minutoFinal - minutoInicial;
+        }
+        return (60 - minutoInicial) + minutoFinal;
+    }
+
+    static int calcularSegundos(int segundoInicial, int segundoFinal)
+    {
+        if (segundoFinal >= segundoInicial)
+        {
+            return segundoFinal - segundoInicial;
+        }
+        return (60 - segundoInicial) + 22;
+    }
+
+
+
     static void mostrarResultado(int dia, int hora, int minuto, int segundo)
     {
         System.Console.WriteLine($"{dia} dia(s)");
@@ -100,7 +168,12 @@ internal class Program
 
             int duracaoJogoHoras = 0, duracaoJogoMinutos = 0, duracaoJogoSegundos = 0, duracaoJogoDias = 0;
 
-            
+            duracaoJogoDias = calcularDias(diaInicial, diaFinal);
+            duracaoJogoHoras = calcularHoras(horaInicial, horaFinal);
+            duracaoJogoMinutos = calcularMinutos(minutoInicial, minutoFinal);
+            duracaoJogoSegundos = calcularSegundos(segundoInicial, segundoFinal);
+
+
 
 
             System.Console.WriteLine("Teste número: " + i);
