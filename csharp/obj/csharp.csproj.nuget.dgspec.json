@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lucas Ferreira\\Documents\\GitHub\\programa-start-by-capgemini\\beecrowd\\csharp\\csharp.csproj": {}
+    "C:\\Users\\Lucas Ferreira\\Documents\\GitHub\\beecrowd\\csharp\\csharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lucas Ferreira\\Documents\\GitHub\\programa-start-by-capgemini\\beecrowd\\csharp\\csharp.csproj": {
+    "C:\\Users\\Lucas Ferreira\\Documents\\GitHub\\beecrowd\\csharp\\csharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lucas Ferreira\\Documents\\GitHub\\programa-start-by-capgemini\\beecrowd\\csharp\\csharp.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas Ferreira\\Documents\\GitHub\\beecrowd\\csharp\\csharp.csproj",
         "projectName": "csharp",
-        "projectPath": "C:\\Users\\Lucas Ferreira\\Documents\\GitHub\\programa-start-by-capgemini\\beecrowd\\csharp\\csharp.csproj",
+        "projectPath": "C:\\Users\\Lucas Ferreira\\Documents\\GitHub\\beecrowd\\csharp\\csharp.csproj",
         "packagesPath": "C:\\Users\\Lucas Ferreira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lucas Ferreira\\Documents\\GitHub\\programa-start-by-capgemini\\beecrowd\\csharp\\obj\\",
+        "outputPath": "C:\\Users\\Lucas Ferreira\\Documents\\GitHub\\beecrowd\\csharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lucas Ferreira\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,7 +43,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -52,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

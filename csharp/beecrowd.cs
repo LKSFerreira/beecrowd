@@ -1,142 +1,439 @@
 ﻿
 internal class Program
 {
-    static string[] valoresTesters = {
-                                   "Dia 5-08 : 12 : 23-Dia 9-06 : 13 : 23",
-                                   "Dia 5-08 : 12 : 23-Dia 5-09 : 13 : 25",
-                                   "Dia 5-08 : 12 : 23-Dia 5-09 : 12 : 24",
-                                   "Dia 5-08 : 12 : 23-Dia 6-09 : 12 : 26",
-                                   "Dia 5-08 : 12 : 23-Dia 5-09 : 12 : 22",
-                                   "Dia 5-08 : 12 : 23-Dia 6-09 : 12 : 22",
-                                   "Dia 5-08 : 12 : 23-Dia 6-09 : 11 : 24",
-                                   "Dia 5-08 : 12 : 23-Dia 5-09 : 11 : 27",
-                                   "Dia 5-08 : 12 : 23-Dia 6-08 : 12 : 25",
-                                   "Dia 5-08 : 12 : 43-Dia 6-08 : 11 : 39",
-                                   "Dia 5-08 : 52 : 37-Dia 6-07 : 59 : 36",
-                                   "Dia 5-08 : 52 : 37-Dia 6-07 : 59 : 37",
-                                   "Dia 5-08 : 52 : 37-Dia 6-07 : 53 : 38",
-                                   "Dia 5-08 : 50 : 37-Dia 6-07 : 49 : 38",
-                                   "Dia 5-08 : 12 : 23-Dia 6-09 : 11 : 20",
-                                   "Dia 5-08 : 12 : 23-Dia 5-09 : 10 : 20",
-                                   "Dia 5-08 : 12 : 43-Dia 6-08 : 52 : 42",
-                                   "Dia 5-08 : 50 : 38-Dia 6-07 : 05 : 37",
-                                   "Dia 5-08 : 50 : 38-Dia 6-07 : 05 : 38",
-                                   "Dia 11-07 : 57 : 09-Dia 15-19 : 00 : 00",
-                                   "Dia 5-08 : 12 : 43-Dia 6-08 : 11 : 48",
-                                   "Dia 1-01 : 12 : 23-Dia 2-01 : 12 : 23",
-                                   "Dia 1-01 : 12 : 23-Dia 2-01 : 12 : 24",
-                                   "Dia 1-01 : 12 : 23-Dia 2-01 : 12 : 22"};
+    static void Main(string[] args)
+    {   
+        int quantidadeInput = int.Parse(Console.ReadLine());
 
-    static string[] valoresEsperado = {
-                                    "3 dia(s)-22 hora(s)-1 minuto(s)-0 segundo(s)",
-                                    "0 dia(s)-1 hora(s)-1 minuto(s)-2 segundo(s)",
-                                    "0 dia(s)-1 hora(s)-0 minuto(s)-1 segundo(s)",
-                                    "1 dia(s)-1 hora(s)-0 minuto(s)-3 segundo(s)",
-                                    "0 dia(s)-0 hora(s)-59 minuto(s)-59 segundo(s)",
-                                    "1 dia(s)-0 hora(s)-59 minuto(s)-59 segundo(s)",
-                                    "1 dia(s)-0 hora(s)-59 minuto(s)-1 segundo(s)",
-                                    "0 dia(s)-0 hora(s)-59 minuto(s)-4 segundo(s)",
-                                    "1 dia(s)-0 hora(s)-0 minuto(s)-2 segundo(s)",
-                                    "0 dia(s)-23 hora(s)-58 minuto(s)-56 segundo(s)",
-                                    "0 dia(s)-23 hora(s)-6 minuto(s)-59 segundo(s)",
-                                    "0 dia(s)-23 hora(s)-7 minuto(s)-0 segundo(s)",
-                                    "0 dia(s)-23 hora(s)-1 minuto(s)-1 segundo(s)",
-                                    "0 dia(s)-22 hora(s)-59 minuto(s)-1 segundo(s)",
-                                    "1 dia(s)-0 hora(s)-58 minuto(s)-57 segundo(s)",
-                                    "0 dia(s)-0 hora(s)-57 minuto(s)-57 segundo(s)",
-                                    "1 dia(s)-0 hora(s)-39 minuto(s)-59 segundo(s)",
-                                    "0 dia(s)-22 hora(s)-14 minuto(s)-59 segundo(s)",
-                                    "0 dia(s)-22 hora(s)-15 minuto(s)-0 segundo(s)",
-                                    "4 dia(s)-11 hora(s)-2 minuto(s)-51 segundo(s)",
-                                    "0 dia(s)-23 hora(s)-59 minuto(s)-5 segundo(s)",
-                                    "1 dia(s)-0 hora(s)-0 minuto(s)-0 segundo(s)",
-                                    "1 dia(s)-0 hora(s)-0 minuto(s)-1 segundo(s)",
-                                    "0 dia(s)-23 hora(s)-59 minuto(s)-59 segundo(s)"};
-    static void mostrarResultadoEsperado(string dia, string hora, string minuto, string segundo)
-    {
-        System.Console.WriteLine(dia);
-        System.Console.WriteLine(hora);
-        System.Console.WriteLine(minuto);
-        System.Console.WriteLine(segundo);
-    }
-
-
-    static void mostrarResultado(int dia, int hora, int minuto, int segundo)
-    {
-        System.Console.WriteLine($"{dia} dia(s)");
-        System.Console.WriteLine($"{hora} hora(s)");
-        System.Console.WriteLine($"{minuto} minuto(s)");
-        System.Console.WriteLine($"{segundo} segundo(s)");
-    }
-
-
-    private static void Main(string[] args)
-    {
-
-        for (int i = 0; i < valoresTesters.Length; i++)
+        for (int i = 0; i < quantidadeInput; i++)
         {
-            string[] testeUnitario = valoresTesters[i].Split('-');
-            string[] valorEsperadoUnitario = valoresEsperado[i].Split('-');
-
-            string diaInicialString = testeUnitario[0];
-            string[] horarioInicio = testeUnitario[1].Replace(" ", "").Replace(":", " ").Split();
-            string diaFinalString = testeUnitario[2];
-            string[] horarioFinal = testeUnitario[3].Replace(" ", "").Replace(":", " ").Split();
-
-            // string diaInicialString = Console.ReadLine();
-            // string[] horarioInicio = Console.ReadLine().Replace(" ", "").Replace(":", " ").Split();
-            // string diaFinalString = Console.ReadLine();
-            // string[] horarioFinal = Console.ReadLine().Replace(" ", "").Replace(":", " ").Split();
-
-            int diaInicial = int.Parse(diaInicialString.Last().ToString());
-            int diaFinal = int.Parse(diaFinalString.Last().ToString());
-
-            int horaInicial = int.Parse(horarioInicio[0]);
-            int minutoInicial = int.Parse(horarioInicio[1]);
-            int segundoInicial = int.Parse(horarioInicio[2]);
-
-            int horaFinal = int.Parse(horarioFinal[0]);
-            int minutoFinal = int.Parse(horarioFinal[1]);
-            int segundoFinal = int.Parse(horarioFinal[2]);
-
-            int eventoInicio = segundoInicial + minutoInicial * 60 + horaInicial * 60 * 60 + diaInicial * 24 * 60 * 60;
-            int eventoFim = segundoFinal + minutoFinal * 60 + horaFinal * 60 * 60 + diaFinal * 24 * 60 * 60;
-            int duracaoEvento = eventoFim-eventoInicio;
             
-            int duracaoJogoDias = duracaoEvento/(60*60*24);
-            duracaoEvento = duracaoEvento%(60*60*24);
-
-            int duracaoJogoHoras = duracaoEvento/(60*60);
-            duracaoEvento = duracaoEvento%(60*60);
-
-            int duracaoJogoMinutos = duracaoEvento/(60);
-            duracaoEvento = duracaoEvento%(60);
-
-            int duracaoJogoSegundos = duracaoEvento;
-
-
-            // System.Console.WriteLine("Teste número: " + i);
-            // System.Console.WriteLine("-------");
-            mostrarResultado(duracaoJogoDias, duracaoJogoHoras, duracaoJogoMinutos, duracaoJogoSegundos);
-            System.Console.WriteLine("-------");
-
-            System.Console.WriteLine(valorEsperadoUnitario[0].Equals($"{duracaoJogoDias} dia(s)"));
-            System.Console.WriteLine(valorEsperadoUnitario[1].Equals($"{duracaoJogoHoras} hora(s)"));
-            System.Console.WriteLine(valorEsperadoUnitario[2].Equals($"{duracaoJogoMinutos} minuto(s)"));
-            System.Console.WriteLine(valorEsperadoUnitario[3].Equals($"{duracaoJogoSegundos} segundo(s)"));
-            System.Console.WriteLine("------");
-
         }
-        //string diaInicialString = Console.ReadLine();
-        //string[] horarioInicio = Console.ReadLine().Replace(" ", "").Replace(":", " ").Split();
-        //string diaFinalString = Console.ReadLine();
-        //string[] horarioFinal = Console.ReadLine().Replace(" ", "").Replace(":", " ").Split();
+
+        System.Console.WriteLine($"Total: {92} cobaias");
+        System.Console.WriteLine($"Total de coelhos: {29}");
+        System.Console.WriteLine($"Total de ratos: {40}");
+        System.Console.WriteLine($"Total de sapos: {23}");
+        System.Console.WriteLine($"Percentual de coelhos: {31.52} %");
+        System.Console.WriteLine($"Percentual de ratos: {43.48} %");
+        System.Console.WriteLine($"Percentual de sapos: {25.00} %");
+
 
         /*
-            CODIGO DO BEECROWD
+        1080 - Maior e Posição
+        https://www.beecrowd.com.br/judge/pt/problems/view/1080
+
+        int posicaoMaiorValor = 0, valorInput = 0;
+
+        for (int i = 1; i <= 5; i++)
+        {
+            int valorEntrada = int.Parse(Console.ReadLine());
+
+            if (valorEntrada > valorInput)
+            {
+                valorInput = valorEntrada;
+                posicaoMaiorValor = i;
+            }
+        }
+        System.Console.WriteLine(valorInput);
+        System.Console.WriteLine(posicaoMaiorValor);
         */
 
 
+        /*
+        1079 - Médias Ponderadas
+        https://www.beecrowd.com.br/judge/pt/problems/view/1079
+
+        int quantidadeInput = int.Parse(Console.ReadLine());
+        double valorA, valorB, valorC, mediaPonderada;
+
+        for (int i = 0; i < quantidadeInput; i++)
+        {
+            string[] imputs = Console.ReadLine().Split();
+            valorA = double.Parse(imputs[0]);
+            valorB = double.Parse(imputs[1]);
+            valorC = double.Parse(imputs[2]);
+
+            mediaPonderada = (valorA * 2 + valorB * 3 + valorC * 5) / 10;
+            System.Console.WriteLine($"{mediaPonderada:F1}");
+        }
+        */
+
+
+        /*
+        1078 - Tabuada
+        https://www.beecrowd.com.br/judge/pt/problems/view/1078
+
+        int valorEntrada = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= 10; i++)
+        {
+            System.Console.WriteLine($"{i} x {valorEntrada} = {i * valorEntrada}");
+        }
+        */
+
+
+        /*
+        1075 - Resto 2
+        https://www.beecrowd.com.br/judge/pt/problems/view/1075
+
+        int valorEntrada = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i < 10000; i++)
+        {
+            if (i % valorEntrada == 2)
+            {
+                System.Console.WriteLine(i);
+            }
+        }
+        */
+
+
+        /*
+        1074 - Par ou Ímpar
+        https://www.beecrowd.com.br/judge/pt/problems/view/1074
+
+        int quantidadeInput = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < quantidadeInput; i++)
+        {
+            int valorEntrada = int.Parse(Console.ReadLine());
+            string moduloNumero, sinalNumero;
+
+            if (valorEntrada == 0)
+            {
+                System.Console.WriteLine("NULL");
+            }
+            else
+            {
+                if (valorEntrada > 0)
+                {
+                    sinalNumero = "POSITIVE";
+                }
+                else
+                {
+                    sinalNumero = "NEGATIVE";
+                }
+
+                if (valorEntrada % 2 == 0)
+                {
+                    moduloNumero = "EVEN";
+                }
+                else
+                {
+                    moduloNumero = "ODD";
+                }
+            System.Console.WriteLine($"{moduloNumero} {sinalNumero}");
+            }
+        }
+        */
+
+
+        /*
+        1073 - Quadrado de Pares
+        https://www.beecrowd.com.br/judge/pt/problems/view/1073
+        int valorEntrada = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= valorEntrada; i++)
+        {
+            if (i % 2 == 0)
+            {
+                System.Console.WriteLine($"{i}^2 = {Math.Pow(i, 2)}");
+            }
+        }
+        */
+
+
+        /*
+        1072 - Intervalo 2
+        https://www.beecrowd.com.br/judge/pt/problems/view/1072
+
+        int quantidadeInput = int.Parse(Console.ReadLine());
+        int valorDentro = 0, valorFora = 0, valorInput = 0;
+
+        for (int i = 0; i < quantidadeInput; i++)
+        {
+            valorInput = int.Parse(Console.ReadLine());
+            if (valorInput >= 10 && valorInput <= 20)
+            {
+                valorDentro++;
+            }
+            else
+            {
+                valorFora++;
+            }
+        }
+
+        System.Console.WriteLine($"{valorDentro} in");
+        System.Console.WriteLine($"{valorFora} out");
+        */
+
+
+        /*
+        1071 - Soma de Impares Consecutivos I
+        https://www.beecrowd.com.br/judge/pt/problems/view/1071
+        
+        int valorX = int.Parse(Console.ReadLine());
+        int valorY = int.Parse(Console.ReadLine());
+        int auxiliar = 0;
+
+        if (valorY < valorX)
+        {
+            auxiliar = valorX;
+            valorX = valorY;
+            valorY = auxiliar;
+        }
+
+        auxiliar = 0;
+
+        for (int i = valorX + 1; i < valorY; i++)
+        {
+            if ((i % 2 != 0))
+            {
+                auxiliar += i;
+            }
+        }
+        System.Console.WriteLine(auxiliar);
+        */
+
+
+        /*
+        1070 - Seis Números Ímpares
+        https://www.beecrowd.com.br/judge/pt/problems/view/1070
+
+        int valorInserido = int.Parse(Console.ReadLine());
+
+        for (int i = valorInserido; i < valorInserido + 6*2; i++)
+        {
+            if (i % 2 == 1)
+            {
+                System.Console.WriteLine(i);
+            }
+        }
+        */
+
+
+        /*
+        1067 - Números Ímpares
+        https://www.beecrowd.com.br/judge/pt/problems/view/1067
+
+        int valorInserido = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i <= valorInserido; i++)
+        {
+            if (i % 2 == 1)
+            {
+                System.Console.WriteLine(i);
+            }
+        }
+        */
+
+
+        /*
+        1066 - Pares, Ímpares, Positivos e Negativos
+        https://www.beecrowd.com.br/judge/pt/problems/view/1066
+
+        int valoresPositivo = 0, valoresNegativo = 0, valoresPar = 0, valoresImpar = 0;
+
+        for (int i = 0; i < 5; i++)
+        {
+            double valoresEntrada = double.Parse(Console.ReadLine());
+
+            if (valoresEntrada % 2 == 0)
+            {
+                valoresPar++;
+            }
+            else
+            {
+                valoresImpar++;
+            }
+
+            if (valoresEntrada > 0)
+            {
+                valoresPositivo++;
+            }
+            else if (valoresEntrada < 0)
+            {
+                valoresNegativo++;
+            }
+        }
+
+        System.Console.WriteLine($"{valoresPar} valor(es) par(es)");
+        System.Console.WriteLine($"{valoresImpar} valor(es) impar(es)");
+        System.Console.WriteLine($"{valoresPositivo} valor(es) positivo(s)");
+        System.Console.WriteLine($"{valoresNegativo} valor(es) negativo(s)");
+        */
+
+
+        /*
+        1065 - Pares entre Cinco Números
+        https://www.beecrowd.com.br/judge/pt/problems/view/1065
+
+        int valoresPositivos = 0;
+
+        for (int i = 0; i < 5; i++)
+        {
+            double valoresEntrada = double.Parse(Console.ReadLine());
+            if (valoresEntrada % 2 == 0)
+            {
+                valoresPositivos++;
+            }
+        }
+
+        System.Console.WriteLine($"{valoresPositivos} valores pares");
+        */
+
+
+        /*
+        1064 - Positivos e Média
+        https://www.beecrowd.com.br/judge/pt/problems/view/1064
+        
+        int valoresPositivos = 0;
+        double mediaValoresPositivo = 0;
+
+        for (int i = 0; i < 6; i++)
+        {
+            double valoresEntrada = double.Parse(Console.ReadLine());
+            if (valoresEntrada > 0)
+            {
+                valoresPositivos++;
+                mediaValoresPositivo += valoresEntrada;
+            }
+        }
+        mediaValoresPositivo = mediaValoresPositivo / valoresPositivos;
+
+        System.Console.WriteLine($"{valoresPositivos} valores positivos");
+        System.Console.WriteLine($"{mediaValoresPositivo:F1}");
+        */
+
+
+        /*
+        1061 - Tempo de um Evento
+        https://www.beecrowd.com.br/judge/pt/problems/view/1061
+
+        static string[] valoresTesters = {
+                                       "Dia 5-08 : 12 : 23-Dia 9-06 : 13 : 23",
+                                       "Dia 5-08 : 12 : 23-Dia 5-09 : 13 : 25",
+                                       "Dia 5-08 : 12 : 23-Dia 5-09 : 12 : 24",
+                                       "Dia 5-08 : 12 : 23-Dia 6-09 : 12 : 26",
+                                       "Dia 5-08 : 12 : 23-Dia 5-09 : 12 : 22",
+                                       "Dia 5-08 : 12 : 23-Dia 6-09 : 12 : 22",
+                                       "Dia 5-08 : 12 : 23-Dia 6-09 : 11 : 24",
+                                       "Dia 5-08 : 12 : 23-Dia 5-09 : 11 : 27",
+                                       "Dia 5-08 : 12 : 23-Dia 6-08 : 12 : 25",
+                                       "Dia 5-08 : 12 : 43-Dia 6-08 : 11 : 39",
+                                       "Dia 5-08 : 52 : 37-Dia 6-07 : 59 : 36",
+                                       "Dia 5-08 : 52 : 37-Dia 6-07 : 59 : 37",
+                                       "Dia 5-08 : 52 : 37-Dia 6-07 : 53 : 38",
+                                       "Dia 5-08 : 50 : 37-Dia 6-07 : 49 : 38",
+                                       "Dia 5-08 : 12 : 23-Dia 6-09 : 11 : 20",
+                                       "Dia 5-08 : 12 : 23-Dia 5-09 : 10 : 20",
+                                       "Dia 5-08 : 12 : 43-Dia 6-08 : 52 : 42",
+                                       "Dia 5-08 : 50 : 38-Dia 6-07 : 05 : 37",
+                                       "Dia 5-08 : 50 : 38-Dia 6-07 : 05 : 38",
+                                       "Dia 11-07 : 57 : 09-Dia 15-19 : 00 : 00",
+                                       "Dia 5-08 : 12 : 43-Dia 6-08 : 11 : 48",
+                                       "Dia 1-01 : 12 : 23-Dia 2-01 : 12 : 23",
+                                       "Dia 1-01 : 12 : 23-Dia 2-01 : 12 : 24",
+                                       "Dia 1-01 : 12 : 23-Dia 2-01 : 12 : 22",
+                                       "Dia 2-08 : 12 : 23-Dia 123-06 : 13 : 23"};
+
+        static string[] valoresEsperado = {
+                                        "3 dia(s)-22 hora(s)-1 minuto(s)-0 segundo(s)",
+                                        "0 dia(s)-1 hora(s)-1 minuto(s)-2 segundo(s)",
+                                        "0 dia(s)-1 hora(s)-0 minuto(s)-1 segundo(s)",
+                                        "1 dia(s)-1 hora(s)-0 minuto(s)-3 segundo(s)",
+                                        "0 dia(s)-0 hora(s)-59 minuto(s)-59 segundo(s)",
+                                        "1 dia(s)-0 hora(s)-59 minuto(s)-59 segundo(s)",
+                                        "1 dia(s)-0 hora(s)-59 minuto(s)-1 segundo(s)",
+                                        "0 dia(s)-0 hora(s)-59 minuto(s)-4 segundo(s)",
+                                        "1 dia(s)-0 hora(s)-0 minuto(s)-2 segundo(s)",
+                                        "0 dia(s)-23 hora(s)-58 minuto(s)-56 segundo(s)",
+                                        "0 dia(s)-23 hora(s)-6 minuto(s)-59 segundo(s)",
+                                        "0 dia(s)-23 hora(s)-7 minuto(s)-0 segundo(s)",
+                                        "0 dia(s)-23 hora(s)-1 minuto(s)-1 segundo(s)",
+                                        "0 dia(s)-22 hora(s)-59 minuto(s)-1 segundo(s)",
+                                        "1 dia(s)-0 hora(s)-58 minuto(s)-57 segundo(s)",
+                                        "0 dia(s)-0 hora(s)-57 minuto(s)-57 segundo(s)",
+                                        "1 dia(s)-0 hora(s)-39 minuto(s)-59 segundo(s)",
+                                        "0 dia(s)-22 hora(s)-14 minuto(s)-59 segundo(s)",
+                                        "0 dia(s)-22 hora(s)-15 minuto(s)-0 segundo(s)",
+                                        "4 dia(s)-11 hora(s)-2 minuto(s)-51 segundo(s)",
+                                        "0 dia(s)-23 hora(s)-59 minuto(s)-5 segundo(s)",
+                                        "1 dia(s)-0 hora(s)-0 minuto(s)-0 segundo(s)",
+                                        "1 dia(s)-0 hora(s)-0 minuto(s)-1 segundo(s)",
+                                        "0 dia(s)-23 hora(s)-59 minuto(s)-59 segundo(s)",
+                                        "120 dia(s)-22 hora(s)-1 minuto(s)-0 segundo(s)"};
+        static void mostrarResultadoEsperado(string dia, string hora, string minuto, string segundo)
+        {
+            System.Console.WriteLine(dia);
+            System.Console.WriteLine(hora);
+            System.Console.WriteLine(minuto);
+            System.Console.WriteLine(segundo);
+        }
+
+
+        public static void mostrarResultado(int dia, int hora, int minuto, int segundo)
+        {
+            System.Console.WriteLine($"{dia} dia(s)");
+            System.Console.WriteLine($"{hora} hora(s)");
+            System.Console.WriteLine($"{minuto} minuto(s)");
+            System.Console.WriteLine($"{segundo} segundo(s)");
+        }
+
+
+        private static void Main(string[] args)
+        {
+
+            for (int i = 0; i < valoresTesters.Length; i++)
+            {
+                string[] testeUnitario = valoresTesters[i].Split('-');
+                string[] valorEsperadoUnitario = valoresEsperado[i].Split('-');
+
+
+                // int diaInicial = int.Parse(testeUnitario[0].Substring(4));
+                // string[] horarioInicio = testeUnitario[1].Replace(" ", "").Replace(":", " ").Split();
+                // int diaFinal = int.Parse(testeUnitario[2].Substring(4));
+                // string[] horarioFinal = testeUnitario[3].Replace(" ", "").Replace(":", " ").Split();
+
+                int diaInicial = int.Parse(Console.ReadLine().Substring(4));
+                string[] horarioInicio = Console.ReadLine().Replace(" ", "").Replace(":", " ").Split();
+                int diaFinal = int.Parse(Console.ReadLine().Substring(4));
+                string[] horarioFinal = Console.ReadLine().Replace(" ", "").Replace(":", " ").Split();
+
+                int horaInicial = int.Parse(horarioInicio[0]);
+                int minutoInicial = int.Parse(horarioInicio[1]);
+                int segundoInicial = int.Parse(horarioInicio[2]);
+
+                int horaFinal = int.Parse(horarioFinal[0]);
+                int minutoFinal = int.Parse(horarioFinal[1]);
+                int segundoFinal = int.Parse(horarioFinal[2]);
+
+                int eventoInicio = segundoInicial + minutoInicial * 60 + horaInicial * 60 * 60 + diaInicial * 24 * 60 * 60;
+                int eventoFim = segundoFinal + minutoFinal * 60 + horaFinal * 60 * 60 + diaFinal * 24 * 60 * 60;
+                int duracaoEvento = eventoFim - eventoInicio;
+
+                int duracaoJogoDias = duracaoEvento / (60 * 60 * 24);
+                duracaoEvento = duracaoEvento % (60 * 60 * 24);
+
+                int duracaoJogoHoras = duracaoEvento / (60 * 60);
+                duracaoEvento = duracaoEvento % (60 * 60);
+
+                int duracaoJogoMinutos = duracaoEvento / (60);
+                duracaoEvento = duracaoEvento % (60);
+
+                int duracaoJogoSegundos = duracaoEvento;
+
+                mostrarResultado(duracaoJogoDias, duracaoJogoHoras, duracaoJogoMinutos, duracaoJogoSegundos);
+
+                System.Console.WriteLine("-------");
+                System.Console.WriteLine(valorEsperadoUnitario[0].Equals($"{duracaoJogoDias} dia(s)"));
+                System.Console.WriteLine(valorEsperadoUnitario[1].Equals($"{duracaoJogoHoras} hora(s)"));
+                System.Console.WriteLine(valorEsperadoUnitario[2].Equals($"{duracaoJogoMinutos} minuto(s)"));
+                System.Console.WriteLine(valorEsperadoUnitario[3].Equals($"{duracaoJogoSegundos} segundo(s)"));
+                System.Console.WriteLine("------");
+            }
+            */
 
 
         /*
@@ -288,8 +585,6 @@ internal class Program
             double salario = double.Parse(Console.ReadLine());
             calcularImpostoDeRenda(salario);
             */
-
-
 
 
         /*
