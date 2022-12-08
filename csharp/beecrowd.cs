@@ -3,20 +3,493 @@ internal class Program
 {
     static void Main(string[] args)
     {   
+        /*
+        1132 - Múltiplos de 13
+        https://www.beecrowd.com.br/judge/pt/problems/view/1132
+
+        int valorX = int.Parse(Console.ReadLine());
+        int valorY = int.Parse(Console.ReadLine());
+
+        if (valorX > valorY)
+        {
+            int auxiliar = valorY;
+            valorY = valorX;
+            valorX = auxiliar;
+        }
+
+        int somatoriaDeNaoMultiplosDe13 = 0;
+
+        for (int i = valorX; i <= valorY; i++)
+        {
+
+            if (i % 13 != 0)
+            {
+                somatoriaDeNaoMultiplosDe13 += i;
+            }
+        }
+
+        System.Console.WriteLine(somatoriaDeNaoMultiplosDe13);
+        */
+
+
+        /*
+        1131 - Grenais
+        https://www.beecrowd.com.br/judge/pt/problems/view/1131
+
+        int quantidadeGuenal = 0, golsInter = 0, golsGremio = 0, empate = 0, vitoriaGremio = 0, vitoriaInter = 0;
+
+        do
+        {
+            string[] entradaConsole = Console.ReadLine().Split();
+
+            golsInter = int.Parse(entradaConsole[0]);
+            golsGremio = int.Parse(entradaConsole[1]);
+
+            if (golsInter < golsGremio)
+            {
+                vitoriaGremio++;
+            }
+            else if (golsInter > golsGremio)
+            {
+                vitoriaInter++;
+            }
+            else
+            {
+                empate++;
+            }
+
+            quantidadeGuenal++;
+
+            System.Console.WriteLine("Novo grenal (1-sim 2-nao)");
+            int respostaParaContinuar = int.Parse(Console.ReadLine());
+
+            if (respostaParaContinuar == 2)
+            {
+                break;
+            }
+
+        } while (true);
+
+        System.Console.WriteLine($"{quantidadeGuenal} grenais");
+        System.Console.WriteLine($"Inter:{vitoriaInter}");
+        System.Console.WriteLine($"Gremio:{vitoriaGremio}");
+        System.Console.WriteLine($"Empates:{empate}");
+
+        if (vitoriaInter > vitoriaGremio)
+        {
+            System.Console.WriteLine($"Inter venceu mais");
+        } else if (vitoriaInter < vitoriaGremio){
+            System.Console.WriteLine($"Gremio venceu mais");
+        } else {
+            System.Console.WriteLine("Nao houve vencedor");
+        }
+        */
+
+
+        /*
+        1118 - Várias Notas Com Validação
+        https://www.beecrowd.com.br/judge/pt/problems/view/1118
+
+        int contador = 0;
+        double nota1 = 0, nota2 = 0, media = 0;
+
+        do
+        {
+            double valorEntrada = double.Parse(Console.ReadLine());
+
+            if (valorEntrada < 0 || valorEntrada > 10)
+            {
+                System.Console.WriteLine("nota invalida");
+            }
+            else
+            {
+                if (contador == 0)
+                {
+                    nota1 = valorEntrada;
+                    contador++;
+                }
+                else
+                {
+                    nota2 = valorEntrada;
+                    media = (nota1 + nota2) / 2;
+                    System.Console.WriteLine($"media = {media:F2}");
+
+                    bool continua = false;
+                    do
+                    {
+                        System.Console.WriteLine("novo calculo (1-sim 2-nao)");
+                        contador = int.Parse(Console.ReadLine());
+
+                        if (contador < 1 || contador > 2)
+                        {
+                            continua = true;
+                        }
+                        else if (contador == 2)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            continua = false;
+                            contador = 0;
+                        }
+
+                    } while (continua);
+
+                    if (contador == 2)
+                    {
+                        break;
+                    }
+                }
+            }
+        } while (true);
+        */
+
+
+        /*
+        1117 - Validação de Nota
+        https://www.beecrowd.com.br/judge/pt/problems/view/1117
+
+        int contador = 0;
+        double nota1 = 0, nota2 = 0, media = 0;
+
+        do
+        {
+            double valorEntrada = double.Parse(Console.ReadLine());
+
+            if (valorEntrada < 0 || valorEntrada > 10)
+            {
+                System.Console.WriteLine("nota invalida");
+            }
+            else
+            {
+                if (contador == 0)
+                {
+                    nota1 = valorEntrada;
+                    contador++;
+                }
+                else
+                {
+                    nota2 = valorEntrada;
+                    media = (nota1 + nota2) / 2;
+                    System.Console.WriteLine($"media = {media}");
+                    break;
+                }
+            }
+        } while (true);
+        */
+
+
+        /*
+        1116 - Dividindo X por Y
+        https://www.beecrowd.com.br/judge/pt/problems/view/1116
+
         int quantidadeInput = int.Parse(Console.ReadLine());
 
         for (int i = 0; i < quantidadeInput; i++)
         {
-            
+            string[] entradaConsole = Console.ReadLine().Split();
+
+            int valorX = int.Parse(entradaConsole[0]);
+            int valorY = int.Parse(entradaConsole[1]);
+
+            if (valorY == 0)
+            {
+                System.Console.WriteLine("divisao impossivel");
+            }
+            else
+            {
+                double resultadoDivisao = (double) valorX / (double) valorY;
+                System.Console.WriteLine($"{resultadoDivisao:F1}");
+            }
+        }
+        */
+
+
+        /*
+        1115 - Quadrante
+        https://www.beecrowd.com.br/judge/pt/problems/view/1115
+
+        do
+        {
+            string[] valoresInserido = Console.ReadLine().Split();
+
+            double valorX = double.Parse(valoresInserido[0]);
+            double valorY = double.Parse(valoresInserido[1]);
+
+            if (valorX == 0 && valorY == 0)
+            {
+               break;
+            }
+            else if (valorX == 0 && valorY != 0)
+            {
+                break;
+            }
+            else if (valorX != 0 && valorY == 0)
+            {
+                break;
+            }
+            else if (valorX > 0 && valorY > 0)
+            {
+                System.Console.WriteLine("primeiro");
+            }
+            else if (valorX < 0 && valorY > 0)
+            {
+                System.Console.WriteLine("segundo");
+            }
+            else if (valorX < 0 && valorY < 0)
+            {
+                System.Console.WriteLine("terceiro");
+            }
+            else
+            {
+                System.Console.WriteLine("quarto");
+            }
+
+        } while (true);
+        */
+
+
+        /*
+        1114 - Senha Fixa
+        https://www.beecrowd.com.br/judge/pt/problems/view/1114
+
+        do
+        {
+            int entradaConsole = int.Parse(Console.ReadLine());
+
+            if (entradaConsole == 2002)
+            {
+                System.Console.WriteLine("Acesso Permitido");
+                break;
+            }
+            else
+            {
+                System.Console.WriteLine("Senha Invalida");
+            }
+
+        } while (true);
+        */
+
+
+        /*
+        1113 - Crescente e Decrescente
+        https://www.beecrowd.com.br/judge/pt/problems/view/1113
+
+        string[] entradaConsole;
+
+        int valorX = 0, valorY = 0;
+
+        do
+        {
+            entradaConsole = Console.ReadLine().Split();
+
+            valorX = int.Parse(entradaConsole[0]);
+            valorY = int.Parse(entradaConsole[1]);
+
+            if (valorX == valorY)
+            {
+                break;
+            }
+            else if (valorX < valorY)
+            {
+                System.Console.WriteLine("Crescente");
+            }
+            else
+            {
+                System.Console.WriteLine("Decrescente");
+            }
+
+        } while (true);
+        */
+
+
+        /*
+        1101 - Sequência de Números e Soma
+        https://www.beecrowd.com.br/judge/pt/problems/view/1101
+
+        string[] entradaConsole;
+
+        int valorM = 0, valorN = 0, auxiliar = 0;
+        bool continua = true;
+
+        do
+        {
+            entradaConsole = Console.ReadLine().Split();
+
+            if (!(int.TryParse(entradaConsole[0], out valorM)) || !(int.TryParse(entradaConsole[1], out valorN)))
+            {
+                break;
+            }
+            else if (valorM <= 0 || valorN <= 0)
+            {
+                break;
+            }
+
+            if (valorM > valorN)
+            {
+                auxiliar = valorN;
+                valorN = valorM;
+                valorM = auxiliar;
+            }
+
+            auxiliar = 0;
+
+            for (int i = valorM; i <= valorN; i++)
+            {
+                System.Console.Write($"{i} ");
+                auxiliar += i;
+            }
+
+            System.Console.WriteLine($"Sum={auxiliar}");
+
+        } while (continua);
+        */
+
+
+        /*
+        1099 - Soma de Ímpares Consecutivos II
+        https://www.beecrowd.com.br/judge/pt/problems/view/1099
+
+        int quantidadeInput = int.Parse(Console.ReadLine());
+        int valorX = 0, valorY = 0, somaDoImpares = 0;
+        string[] entradaConsole;
+
+        for (int i = 0; i < quantidadeInput; i++)
+        {
+            entradaConsole = Console.ReadLine().Split();
+
+            valorX = int.Parse(entradaConsole[0]);
+            valorY = int.Parse(entradaConsole[1]);
+
+            if (valorX > valorY)
+            {
+                int aux = valorX;
+                valorX = valorY;
+                valorY = aux;
+            }
+
+            for (int j = valorX + 1; j < valorY; j++)
+            {
+                if (j % 2 != 0)
+                {
+                    somaDoImpares += j;
+                }
+
+            }
+            System.Console.WriteLine(somaDoImpares);
+            somaDoImpares = 0;
         }
 
-        System.Console.WriteLine($"Total: {92} cobaias");
-        System.Console.WriteLine($"Total de coelhos: {29}");
-        System.Console.WriteLine($"Total de ratos: {40}");
-        System.Console.WriteLine($"Total de sapos: {23}");
-        System.Console.WriteLine($"Percentual de coelhos: {31.52} %");
-        System.Console.WriteLine($"Percentual de ratos: {43.48} %");
-        System.Console.WriteLine($"Percentual de sapos: {25.00} %");
+
+        /*
+        1098 - Sequencia IJ 4
+        https://www.beecrowd.com.br/judge/pt/problems/view/1098
+
+        double aux = 0;
+        double j = 1;
+
+        for (double i = 0; i <= 2; i += 0.2)
+        {
+            for (j = j; j <= 3 + aux; j++)
+            {   
+                
+                Console.WriteLine($"I={Math.Round(i,1)} J={Math.Round(j,1)}");
+            }
+
+            aux += 0.2;
+            j = 1 + aux;
+        }
+        /*
+
+
+        /*
+        1097 - Sequencia IJ 3
+        https://www.beecrowd.com.br/judge/pt/problems/view/1097
+
+        int aux = 7;    
+
+        for (int i = 1; i <= 9; i += 2)
+        {
+
+            for (int j = aux; j > aux - 3; j--)
+            {
+                System.Console.WriteLine($"I={i} J={j}");
+            }
+
+            aux += 2;
+        }
+        */
+
+
+        /*
+        1096 - Sequencia IJ 2
+        https://www.beecrowd.com.br/judge/pt/problems/view/1096
+
+        for (int i = 1; i <= 9; i += 2)
+        {
+            for (int j = 7; j >= 5; j--)
+            {
+                System.Console.WriteLine($"I={i} J={j}");
+            }
+        }
+        */
+
+
+        /*
+        1095 - Sequencia IJ 1
+        https://www.beecrowd.com.br/judge/pt/problems/view/1095
+
+        int i = 1;
+
+        for (int j = 60; j >= 0; j -= 5)
+        {
+            System.Console.WriteLine($"I={i} J={j}");
+            i += 3;
+        }
+        */
+
+
+        /*
+        1094 - Experiências
+        https://www.beecrowd.com.br/judge/pt/problems/view/1094
+
+        int quantidadeInput = int.Parse(Console.ReadLine());
+        int totalCobaia = 0, totalCoelho = 0, totalRato = 0, totalSapo = 0;
+        double porcentagemCoelho = 0, porcentagemRato = 0, porcentagemSapo = 0;
+        string entradaValores = "";
+
+        for (int i = 0; i < quantidadeInput; i++)
+        {
+            entradaValores = Console.ReadLine().ToString();
+
+            if (entradaValores.Contains("C"))
+            {
+                totalCoelho += int.Parse(entradaValores.Split()[0]);
+            }
+            else if (entradaValores.Contains("R"))
+            {
+                totalRato += int.Parse(entradaValores.Split()[0]);
+            }
+            else if (entradaValores.Contains("S"))
+            {
+                totalSapo += int.Parse(entradaValores.Split()[0]);
+            }
+        }
+
+        totalCobaia = totalCoelho + totalRato + totalSapo;
+        porcentagemCoelho = (100.00 * totalCoelho) / totalCobaia;
+        porcentagemRato = (100.00 * totalRato) / totalCobaia;
+        porcentagemSapo = (100.00 * totalSapo) / totalCobaia;
+
+        System.Console.WriteLine($"Total: {totalCobaia} cobaias");
+        System.Console.WriteLine($"Total de coelhos: {totalCoelho}");
+        System.Console.WriteLine($"Total de ratos: {totalRato}");
+        System.Console.WriteLine($"Total de sapos: {totalSapo}");
+        System.Console.WriteLine($"Percentual de coelhos: {porcentagemCoelho:F2} %");
+        System.Console.WriteLine($"Percentual de ratos: {porcentagemRato:F2} %");
+        System.Console.WriteLine($"Percentual de sapos: {porcentagemSapo:F2} %");
+        */
 
 
         /*
