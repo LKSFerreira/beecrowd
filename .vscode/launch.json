@@ -12,7 +12,7 @@
             "program": "${workspaceFolder}/csharp/bin/Debug/net6.0/csharp.dll",
             "args": [],
             "cwd": "${workspaceFolder}/csharp",
-            "console": "internalConsole",
+            "console": "integratedTerminal",
             "stopAtEntry": false
         },
         {

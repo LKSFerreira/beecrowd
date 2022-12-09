@@ -3,9 +3,10 @@ internal class Program
 {
     static void Main(string[] args)
     {   
-        /*
-        1132 - Múltiplos de 13
-        https://www.beecrowd.com.br/judge/pt/problems/view/1132
+
+        
+        //1132 - Múltiplos de 13
+        //https://www.beecrowd.com.br/judge/pt/problems/view/1132
 
         int valorX = int.Parse(Console.ReadLine());
         int valorY = int.Parse(Console.ReadLine());
@@ -29,7 +30,10 @@ internal class Program
         }
 
         System.Console.WriteLine(somatoriaDeNaoMultiplosDe13);
-        */
+
+        System.Console.WriteLine("Pressione qualquer tecla para sair");
+        Console.ReadKey(true);
+        
 
 
         /*

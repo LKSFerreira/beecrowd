@@ -1,0 +1,5 @@
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\csharp\bin\Release\net6.0\publish\csharp.exe
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\csharp\bin\Release\net6.0\publish\csharp.dll
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\csharp\bin\Release\net6.0\publish\csharp.deps.json
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\csharp\bin\Release\net6.0\publish\csharp.runtimeconfig.json
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\csharp\bin\Release\net6.0\publish\csharp.pdb
