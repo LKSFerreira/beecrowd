@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "csharp/1.0.0": {
+      "biblioteca-de-classes-introducao/1.0.0": {
         "runtime": {
-          "csharp.dll": {}
+          "biblioteca-de-classes-introducao.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "csharp/1.0.0": {
+    "biblioteca-de-classes-introducao/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

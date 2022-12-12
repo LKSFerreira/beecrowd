@@ -3,10 +3,90 @@ internal class Program
 {
     static void Main(string[] args)
     {   
+        /*
+        1142 - PUM
+        https://www.beecrowd.com.br/judge/pt/problems/view/1142
+
+        int numeroDeLinhas = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= numeroDeLinhas * 4; i++)
+        {
+            if (i % 4 == 0)
+            {
+                System.Console.WriteLine("PUM");
+            }
+            else
+            {
+                System.Console.Write($"{i} ");
+            }
+        }
+        */
 
         
-        //1132 - Múltiplos de 13
-        //https://www.beecrowd.com.br/judge/pt/problems/view/1132
+        /*
+        1134 - Tipo de Combustível
+        https://www.beecrowd.com.br/judge/pt/problems/view/1134
+
+        int alcool = 0, gasolina = 0, diesel = 0;
+        bool continua = true;
+
+        do
+        {
+            int tipoCombustivel = int.Parse(Console.ReadLine());
+
+            switch (tipoCombustivel)
+            {
+                case 1:
+                    alcool++;
+                    break;
+                case 2:
+                    gasolina++;
+                    break;
+                case 3:
+                    diesel++;
+                    break;
+                case 4:
+                    continua = false;
+                    break;
+                default:
+                    break;
+            }
+
+        } while (continua);
+        System.Console.WriteLine("MUITO OBRIGADO");
+        System.Console.WriteLine($"Alcool: {alcool}");
+        System.Console.WriteLine($"Gasolina: {gasolina}");
+        System.Console.WriteLine($"Diesel: {diesel}");
+        */
+
+
+        /*
+        1133 - Resto da Divisão
+        https://www.beecrowd.com.br/judge/pt/problems/view/1133
+
+        int valorX = int.Parse(Console.ReadLine());
+        int valorY = int.Parse(Console.ReadLine());
+
+        if (valorX > valorY)
+        {
+            int auxiliar = valorX;
+            valorX = valorY;
+            valorY = auxiliar;
+        }
+
+        for (int i = valorX + 1; i < valorY; i++)
+        {
+            if ((i % 5 == 2) || (i % 5 == 3))
+            {
+                System.Console.WriteLine(i);
+            }
+        }
+        */
+
+
+        /*
+        1132 - Múltiplos de 13
+        https://www.beecrowd.com.br/judge/pt/problems/view/1132
 
         int valorX = int.Parse(Console.ReadLine());
         int valorY = int.Parse(Console.ReadLine());
@@ -33,7 +113,7 @@ internal class Program
 
         System.Console.WriteLine("Pressione qualquer tecla para sair");
         Console.ReadKey(true);
-        
+        */
 
 
         /*
@@ -384,9 +464,31 @@ internal class Program
             System.Console.WriteLine(somaDoImpares);
             somaDoImpares = 0;
         }
+        */
 
 
         /*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         1098 - Sequencia IJ 4
         https://www.beecrowd.com.br/judge/pt/problems/view/1098
 

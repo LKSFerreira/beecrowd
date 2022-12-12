@@ -6,5 +6,5 @@ build_property.ProjectTypeGuids =
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = csharp
-build_property.ProjectDir = C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\csharp\
+build_property.RootNamespace = biblioteca_de_classes_introducao
+build_property.ProjectDir = c:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\

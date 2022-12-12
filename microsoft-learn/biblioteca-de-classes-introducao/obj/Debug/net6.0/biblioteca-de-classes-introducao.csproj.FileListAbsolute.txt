@@ -1,0 +1,15 @@
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\bin\Debug\net6.0\biblioteca-de-classes-introducao.exe
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\bin\Debug\net6.0\biblioteca-de-classes-introducao.deps.json
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\bin\Debug\net6.0\biblioteca-de-classes-introducao.runtimeconfig.json
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\bin\Debug\net6.0\biblioteca-de-classes-introducao.dll
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\bin\Debug\net6.0\biblioteca-de-classes-introducao.pdb
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\obj\Debug\net6.0\biblioteca-de-classes-introducao.csproj.AssemblyReference.cache
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\obj\Debug\net6.0\biblioteca-de-classes-introducao.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\obj\Debug\net6.0\biblioteca-de-classes-introducao.AssemblyInfoInputs.cache
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\obj\Debug\net6.0\biblioteca-de-classes-introducao.AssemblyInfo.cs
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\obj\Debug\net6.0\biblioteca-de-classes-introducao.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\obj\Debug\net6.0\biblioteca-de-classes-introducao.dll
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\obj\Debug\net6.0\refint\biblioteca-de-classes-introducao.dll
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\obj\Debug\net6.0\biblioteca-de-classes-introducao.pdb
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\obj\Debug\net6.0\biblioteca-de-classes-introducao.genruntimeconfig.cache
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\biblioteca-de-classes-introducao\obj\Debug\net6.0\ref\biblioteca-de-classes-introducao.dll
