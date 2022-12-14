@@ -3,6 +3,84 @@ internal class Program
 {
     static void Main(string[] args)
     {   
+        
+        /*
+        1146 - Sequências Crescentes
+        https://www.beecrowd.com.br/judge/pt/problems/view/1146
+
+        do
+        {
+            int valorEntrada = int.Parse(Console.ReadLine());
+
+            if (valorEntrada == 0) {
+                break;
+            } else {
+                for (int i = 1; i <= valorEntrada; i++)
+                {
+                    if (valorEntrada != i){
+                        System.Console.Write($"{i} ");
+                    } else {
+                        System.Console.WriteLine(i);
+                    }
+                }
+            }
+        } while (true);
+        */
+
+
+        /*
+        1145 - Sequência Lógica 2
+        https://www.beecrowd.com.br/judge/pt/problems/view/1145
+
+        string[] entradaConsole = Console.ReadLine().Split();
+
+        int valorX = int.Parse(entradaConsole[0]);
+        int valorY = int.Parse(entradaConsole[1]);
+
+        for (int i = 1; i <= valorY; i++)
+        {
+            if (i % valorX != 0)
+            {
+                System.Console.Write($"{i} ");
+            }
+            else
+            {
+                System.Console.WriteLine(i);
+            }
+        }
+        */
+
+
+        /*
+        1144 - Sequência Lógica
+        https://www.beecrowd.com.br/judge/pt/problems/view/1144
+
+        int valorEntrada = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= valorEntrada; i++)
+        {
+            for (int j = 1; j <= 1; j++)
+            {
+                System.Console.WriteLine($"{i} {Math.Pow(i, 2)} {Math.Pow(i, 3)}");
+                System.Console.WriteLine($"{i} {Math.Pow(i, 2)+j} {Math.Pow(i, 3)+j}");
+            }
+        }
+        */
+
+
+        /*
+        1143 - Quadrado e ao Cubo
+        https://www.beecrowd.com.br/judge/pt/problems/view/1143
+
+        int valorEntrada = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= valorEntrada; i++)
+        {
+            System.Console.WriteLine($"{i} {Math.Pow(i, 2)} {Math.Pow(i,3)}");
+        }
+        */
+
+
         /*
         1142 - PUM
         https://www.beecrowd.com.br/judge/pt/problems/view/1142
@@ -22,7 +100,7 @@ internal class Program
         }
         */
 
-        
+
         /*
         1134 - Tipo de Combustível
         https://www.beecrowd.com.br/judge/pt/problems/view/1134
@@ -488,7 +566,7 @@ internal class Program
 
 
 
-        
+
         1098 - Sequencia IJ 4
         https://www.beecrowd.com.br/judge/pt/problems/view/1098
 
@@ -499,7 +577,7 @@ internal class Program
         {
             for (j = j; j <= 3 + aux; j++)
             {   
-                
+
                 Console.WriteLine($"I={Math.Round(i,1)} J={Math.Round(j,1)}");
             }
 
@@ -751,7 +829,7 @@ internal class Program
         /*
         1071 - Soma de Impares Consecutivos I
         https://www.beecrowd.com.br/judge/pt/problems/view/1071
-        
+
         int valorX = int.Parse(Console.ReadLine());
         int valorY = int.Parse(Console.ReadLine());
         int auxiliar = 0;
@@ -866,7 +944,7 @@ internal class Program
         /*
         1064 - Positivos e Média
         https://www.beecrowd.com.br/judge/pt/problems/view/1064
-        
+
         int valoresPositivos = 0;
         double mediaValoresPositivo = 0;
 
