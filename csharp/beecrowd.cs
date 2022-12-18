@@ -3,6 +3,25 @@ internal class Program
 {
     static void Main(string[] args)
     {   
+        int fatorial = 0;
+
+        int CalcularFatorial(int numero)
+        {
+            // Se o número for igual a 0 ou 1, retornará 1, pois fatorial de 0 e 1 é igual a 1
+            if (numero == 0 || numero == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                // Senão , retornará o numero x fatorial do número anterior
+                fatorial = numero * CalcularFatorial(numero - 1);
+                return fatorial;
+            }
+        }
+
+        System.Console.WriteLine(CalcularFatorial(5));
+
         
         /*
         1146 - Sequências Crescentes
