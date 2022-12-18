@@ -3,7 +3,6 @@ internal class Program
 {
     static void Main(string[] args)
     {   
-        int fatorial = 0;
 
         int CalcularFatorial(int numero)
         {
@@ -15,8 +14,7 @@ internal class Program
             else
             {
                 // Senão , retornará o numero x fatorial do número anterior
-                fatorial = numero * CalcularFatorial(numero - 1);
-                return fatorial;
+                return numero * CalcularFatorial(numero - 1);
             }
         }
 
