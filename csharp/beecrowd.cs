@@ -2,25 +2,282 @@
 internal class Program
 {
     static void Main(string[] args)
-    {   
+    {
+        int casosParaTeste = int.Parse(Console.ReadLine());
 
-        int CalcularFatorial(int numero)
+        for (int i = 0; i < casosParaTeste; i++)
         {
-            // Se o número for igual a 0 ou 1, retornará 1, pois fatorial de 0 e 1 é igual a 1
-            if (numero == 0 || numero == 1)
+            string[] dadosCidades = Console.ReadLine().Split();
+
+            int populacaoCidadeA = int.Parse(dadosCidades[0]);
+            int populacaoCidadeB = int.Parse(dadosCidades[1]);
+
+            double crescimentoPopulacionalA = double.Parse(dadosCidades[2]);
+            double crescimentoPopulacionalB = double.Parse(dadosCidades[3]);
+
+            double tempoUltrapassagem = Math.Round((populacaoCidadeB - populacaoCidadeA) / (crescimentoPopulacionalA - crescimentoPopulacionalB)/100);
+
+            if (tempoUltrapassagem < 100)
             {
-                return 1;
+                Console.WriteLine($"{tempoUltrapassagem} anos.");
             }
             else
             {
-                // Senão , retornará o numero x fatorial do número anterior
-                return numero * CalcularFatorial(numero - 1);
+                Console.WriteLine($"Mais de 1 seculo.");
+            }
+
+        }
+
+
+
+        /*
+        1159 - Soma de Pares Consecutivos
+        https://www.beecrowd.com.br/judge/pt/problems/view/1159
+        
+        int valorEntrada = 0;
+        valorEntrada = int.Parse(Console.ReadLine());
+
+        do
+        {
+
+            int paresConsecutivo = valorEntrada + (5 * 2);
+            int somatoriaDosPares = 0;
+
+            for (int i = valorEntrada; i < paresConsecutivo; i++)
+            {
+                if (valorEntrada % 2 == 0)
+                {
+                    somatoriaDosPares += valorEntrada;
+                    valorEntrada++;
+                }
+                else
+                {
+                    valorEntrada++;
+                }
+            }
+
+            Console.WriteLine($"{somatoriaDosPares}");
+
+            valorEntrada = int.Parse(Console.ReadLine());
+        } while (valorEntrada != 0);
+        */
+
+
+        /*
+        1158 - Soma de Ímpares Consecutivos III
+        https://www.beecrowd.com.br/judge/pt/problems/view/1158
+        
+
+        int casosParaTeste = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < casosParaTeste; i++)
+        {
+            string[] valores = Console.ReadLine().Split();
+
+            int valorInicial = int.Parse(valores[0]);
+            int quantidadeDeImpares = int.Parse(valores[1]);
+
+            int somaConsecutivosImpares = 0, numerosNegativo = 0, contardorImpares = 0;
+
+            do
+            {
+                if (valorInicial % 2 != 0 && valorInicial < 0)
+                {
+                    numerosNegativo += Math.Abs(valorInicial);
+                    contardorImpares++;
+                }
+                else if (valorInicial % 2 != 0)
+                {
+                    somaConsecutivosImpares += valorInicial;
+                    contardorImpares++;
+                }
+                valorInicial++;
+            } while (contardorImpares < quantidadeDeImpares);
+
+            Console.WriteLine($"{somaConsecutivosImpares - numerosNegativo}");
+        }
+        */
+
+
+        /*
+        1157 - Divisores I
+        https://www.beecrowd.com.br/judge/pt/problems/view/1157
+
+        int dividendo = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= dividendo; i++)
+        {
+            if (dividendo % i == 0) Console.WriteLine($"{i}");
+        }
+        */
+
+
+        /*
+        https://www.beecrowd.com.br/judge/pt/problems/view/1156
+        1156 - Sequência S II
+
+        double valorS = 1, valorX = 1, valorY = 1;
+
+        for (int i = 1; i <= 19; i++)
+        {
+            valorS += ((double)(valorX += 2) / (double)(valorY *= 2));
+
+        }
+        Console.WriteLine($"{valorS:F2}");
+        */
+
+
+        /*
+        1155 - Sequência S
+        https://www.beecrowd.com.br/judge/pt/problems/view/1155
+
+        double valorS = 1;
+
+        for (int i = 2; i <= 100; i++)
+        {
+            valorS += ((double)1 / i);
+        }
+        Console.WriteLine($"{valorS:F2}");
+        */
+
+
+        /*
+        1154 - Idades
+        https://www.beecrowd.com.br/judge/pt/problems/view/1154
+
+        int somatoriaIdade = 0;
+        int quantidadeInput = 0;
+        int idade = 0;
+
+        do
+        {
+            idade = int.Parse(Console.ReadLine());
+
+            if (idade > 0)
+            {
+                somatoriaIdade += idade;
+                quantidadeInput++;
+            }
+
+        } while (idade > 0);
+
+        double media = (double)somatoriaIdade / (double)quantidadeInput;
+
+        Console.WriteLine($"{media:F2}");
+        */
+
+
+        /*
+           1153 - Fatorial Simples
+           https://www.beecrowd.com.br/judge/pt/problems/view/1153
+
+           // Função Fatorial
+
+       static int CalcularFatorial(int numero)
+       {
+           // Se o número for igual a 0 ou 1, retornará 1, pois fatorial de 0 e 1 é igual a 1
+           if (numero == 0 || numero == 1)
+           {
+               return 1;
+           }
+           else
+           {
+               // Senão , retornará o numero x fatorial do número anterior
+               return numero * CalcularFatorial(numero - 1);
+           }
+       }
+
+       static void Main(string[] args)
+       {
+           Console.WriteLine($"{CalcularFatorial(int.Parse(Console.ReadLine()))}");
+           */
+
+
+        /*
+        1151 - Fibonacci Fácil
+        https://www.beecrowd.com.br/judge/pt/problems/view/1151
+
+        int valorN = int.Parse(Console.ReadLine());
+        int penultimo = 0;
+        int ultimo = 1;
+
+        if (valorN >= 1) Console.Write($"{penultimo} ");
+        if (valorN >= 2) Console.Write($"{ultimo}");
+
+
+        for (int i = 1; i <= valorN - 2; i++)
+        {
+            int resultado = ultimo + penultimo;
+
+            Console.Write($" {resultado}");
+            penultimo = ultimo;
+            ultimo = resultado;
+        }
+        Console.Write($"\n");
+        */
+
+
+        /*
+        1150 - Ultrapassando Z
+        https://www.beecrowd.com.br/judge/pt/problems/view/1150
+
+        int valorZ = 0, valorX = int.Parse(Console.ReadLine());
+
+        do
+        {
+            valorZ = int.Parse(Console.ReadLine());
+
+        } while (valorZ <= valorX);
+
+        int quantidadeDeSomas = 1;
+
+        for (int i = valorX; i < valorZ; i++)
+        {
+            valorX += i;
+            quantidadeDeSomas++;
+            if (valorX > valorZ) break;
+        }
+        Console.WriteLine($"{quantidadeDeSomas}");
+        */
+
+
+        /*
+        1149 - Somando Inteiros Consecutivos
+        https://www.beecrowd.com.br/judge/pt/problems/view/1149
+
+        Solicitar correrção no uDebug
+
+        string[] valoresEntrada = Console.ReadLine().Split();
+        int[] valores = { 0, 0 };
+        int resultado = 0;
+
+        for (int i = 0; i < valoresEntrada.Length; i++)
+        {
+            if (int.Parse(valoresEntrada[i]) >= 0)
+            {
+                if (resultado == 0)
+                {
+                    valores[0] = int.Parse(valoresEntrada[i]);
+                    resultado++;
+                }
+                else
+                {
+                    valores[1] = int.Parse(valoresEntrada[i]);
+                }
             }
         }
 
-        System.Console.WriteLine(CalcularFatorial(5));
+        resultado = 0;
 
-        
+        for (int i = 0; i < valores[1]; i++)
+        {
+            resultado += valores[0] + i;
+        }
+
+        Console.WriteLine($"{resultado}");
+        */
+
+
         /*
         1146 - Sequências Crescentes
         https://www.beecrowd.com.br/judge/pt/problems/view/1146
