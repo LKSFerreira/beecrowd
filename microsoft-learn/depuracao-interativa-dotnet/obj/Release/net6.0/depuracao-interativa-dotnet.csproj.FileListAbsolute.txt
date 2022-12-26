@@ -1,0 +1,15 @@
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\bin\Release\net6.0\depuracao-interativa-dotnet.exe
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\bin\Release\net6.0\depuracao-interativa-dotnet.deps.json
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\bin\Release\net6.0\depuracao-interativa-dotnet.runtimeconfig.json
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\bin\Release\net6.0\depuracao-interativa-dotnet.dll
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\bin\Release\net6.0\depuracao-interativa-dotnet.pdb
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\obj\Release\net6.0\depuracao-interativa-dotnet.csproj.AssemblyReference.cache
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\obj\Release\net6.0\depuracao-interativa-dotnet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\obj\Release\net6.0\depuracao-interativa-dotnet.AssemblyInfoInputs.cache
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\obj\Release\net6.0\depuracao-interativa-dotnet.AssemblyInfo.cs
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\obj\Release\net6.0\depuracao-interativa-dotnet.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\obj\Release\net6.0\depuracao-interativa-dotnet.dll
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\obj\Release\net6.0\refint\depuracao-interativa-dotnet.dll
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\obj\Release\net6.0\depuracao-interativa-dotnet.pdb
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\obj\Release\net6.0\depuracao-interativa-dotnet.genruntimeconfig.cache
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\depuracao-interativa-dotnet\obj\Release\net6.0\ref\depuracao-interativa-dotnet.dll

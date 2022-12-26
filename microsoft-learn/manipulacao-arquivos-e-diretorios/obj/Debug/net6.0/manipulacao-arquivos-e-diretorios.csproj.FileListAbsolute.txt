@@ -1,0 +1,15 @@
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\bin\Debug\net6.0\manipulacao-arquivos-e-diretorios.exe
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\bin\Debug\net6.0\manipulacao-arquivos-e-diretorios.deps.json
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\bin\Debug\net6.0\manipulacao-arquivos-e-diretorios.runtimeconfig.json
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\bin\Debug\net6.0\manipulacao-arquivos-e-diretorios.dll
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\bin\Debug\net6.0\manipulacao-arquivos-e-diretorios.pdb
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\obj\Debug\net6.0\manipulacao-arquivos-e-diretorios.csproj.AssemblyReference.cache
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\obj\Debug\net6.0\manipulacao-arquivos-e-diretorios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\obj\Debug\net6.0\manipulacao-arquivos-e-diretorios.AssemblyInfoInputs.cache
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\obj\Debug\net6.0\manipulacao-arquivos-e-diretorios.AssemblyInfo.cs
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\obj\Debug\net6.0\manipulacao-arquivos-e-diretorios.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\obj\Debug\net6.0\manipulacao-arquivos-e-diretorios.dll
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\obj\Debug\net6.0\refint\manipulacao-arquivos-e-diretorios.dll
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\obj\Debug\net6.0\manipulacao-arquivos-e-diretorios.pdb
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\obj\Debug\net6.0\manipulacao-arquivos-e-diretorios.genruntimeconfig.cache
+C:\Users\Lucas Ferreira\Documents\GitHub\beecrowd\microsoft-learn\manipulacao-arquivos-e-diretorios\obj\Debug\net6.0\ref\manipulacao-arquivos-e-diretorios.dll
